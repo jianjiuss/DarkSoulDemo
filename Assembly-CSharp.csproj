@@ -52,9 +52,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ActorController.cs" />
+     <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\FSMClearSignals.cs" />
      <Compile Include="Assets\Scripts\FSMOnEnter.cs" />
      <Compile Include="Assets\Scripts\FSMOnExit.cs" />
+     <Compile Include="Assets\Scripts\FSMOnUpdate.cs" />
      <Compile Include="Assets\Scripts\OnGroundSensor.cs" />
      <Compile Include="Assets\Scripts\PlayerInput.cs" />
  <Reference Include="UnityEngine.UI">

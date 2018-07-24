@@ -13,8 +13,10 @@ public class OnGroundSensor : MonoBehaviour
 
 	void Awake () 
     {
-        radius = capcol.radius - 0.05f;	
+        radius = capcol.radius;
 	}
+
+
 
 	void Update () 
     {
@@ -28,7 +30,6 @@ public class OnGroundSensor : MonoBehaviour
         }
         else
         {
-            Debug.Log("isnotGround");
             gameObject.SendMessageUpwards("IsNotGround");
         }
 	}
