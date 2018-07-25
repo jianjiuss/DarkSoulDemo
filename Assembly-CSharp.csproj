@@ -59,6 +59,8 @@
      <Compile Include="Assets\Scripts\FSMOnUpdate.cs" />
      <Compile Include="Assets\Scripts\OnGroundSensor.cs" />
      <Compile Include="Assets\Scripts\PlayerInput.cs" />
+     <Compile Include="Assets\Scripts\RootMotionController.cs" />
+     <Compile Include="Assets\Scripts\TriggerController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

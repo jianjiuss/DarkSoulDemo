@@ -10,26 +10,36 @@ public class ActorController : MonoBehaviour
     public float runMultiplier = 2.0f;
     public float jumpVelocity;
     public float rollVelocity = 3.0f;
+    public float rollMag = 1.0f;
 
-    [SerializeField]
+    [Space(10)]
+    [Header("===== Friction Setting =====")]
+    public PhysicMaterial frictionOne;
+    public PhysicMaterial frictionZero;
+
     private Animator anim;
     private Rigidbody rigid;
     private Vector3 planarVec;
     private Vector3 thrustVec;
-
+    private bool canAttack = true;
     private bool lockPlanar = false;
+    private CapsuleCollider col;
+    private float lerpTarget;
+    private Vector3 deltaPos;
+    private bool isAddRollVeloctiy = true;
 
 	void Awake () 
     {
         pi = GetComponent<PlayerInput>();
         anim = model.GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
+        col = GetComponent<CapsuleCollider>();
 	}
 	
 	void Update () 
     {
         anim.SetFloat("forward", pi.Dmag * Mathf.Lerp(anim.GetFloat("forward"), (pi.run ? 2f : 1f), 0.5f));
-        if(rigid.velocity.magnitude > 0f)
+        if (rigid.velocity.magnitude > rollMag)
         {
             anim.SetTrigger("roll");
         }
@@ -37,6 +47,12 @@ public class ActorController : MonoBehaviour
         if(pi.jump)
         {
             anim.SetTrigger("jump");
+            canAttack = false;
+        }
+
+        if(pi.attack && CheckState("ground") && canAttack)
+        {
+            anim.SetTrigger("attack");
         }
 
         if(pi.Dmag > 0.1f)
@@ -55,8 +71,15 @@ public class ActorController : MonoBehaviour
     void FixedUpdate()
     {
         //rigid.position += planarVec * Time.fixedDeltaTime * movingSpeed;
+        rigid.position += deltaPos;
         rigid.velocity = new Vector3(planarVec.x, rigid.velocity.y, planarVec.z) + thrustVec;
         thrustVec = Vector3.zero;
+        deltaPos = Vector3.zero;
+    }
+
+    private bool CheckState(string stateName, string layerName = "Base Layer")
+    {
+        return anim.GetCurrentAnimatorStateInfo(anim.GetLayerIndex(layerName)).IsName(stateName);
     }
 
 
@@ -66,6 +89,7 @@ public class ActorController : MonoBehaviour
         thrustVec = new Vector3(0, jumpVelocity, 0);
         pi.inputEnable = false;
         lockPlanar = true;
+        isAddRollVeloctiy = false;
     }
 
     public void IsGround()
@@ -82,19 +106,40 @@ public class ActorController : MonoBehaviour
     {
         pi.inputEnable = true;
         lockPlanar = false;
+        canAttack = true;
+        col.material = frictionOne;
+    }
+    public void ExitGround()
+    {
+        col.material = frictionZero;
     }
 
     public void OnFailEnter()
     {
         pi.inputEnable = false;
         lockPlanar = true;
+        isAddRollVeloctiy = false;
     }
 
     public void OnRollEnter()
     {
+        //thrustVec = model.transform.forward * rollVelocity;
         thrustVec = new Vector3(0, rollVelocity, 0);
         pi.inputEnable = false;
         lockPlanar = true;
+    }
+
+    public void OnRollUpdate()
+    {
+        if(isAddRollVeloctiy)
+        {
+            thrustVec = model.transform.forward * anim.GetFloat("rollVelocity");
+        }
+    }
+
+    public void OnRollExit()
+    {
+        isAddRollVeloctiy = true;
     }
 
     public void OnJabEnter()
@@ -107,5 +152,38 @@ public class ActorController : MonoBehaviour
     public void OnJabUpdate()
     {
         thrustVec = model.transform.forward * anim.GetFloat("jabVelocity");
+    }
+
+    public void OnAttack1hAEnter()
+    {
+        lerpTarget = 1.0f;
+        pi.inputEnable = false;
+    }
+
+    public void OnAttack1hAUpdate()
+    {
+        int index = anim.GetLayerIndex("Attack");
+        anim.SetLayerWeight(index, Mathf.Lerp(anim.GetLayerWeight(index), lerpTarget, 0.3f));
+        thrustVec = model.transform.forward * anim.GetFloat("attack1hAVelocity");
+    }
+
+    public void OnAttackIdleEnter()
+    {
+        pi.inputEnable = true;
+        lerpTarget = 0;
+    }
+
+    public void OnAttackIdleUpdate()
+    {
+        int index = anim.GetLayerIndex("Attack");
+        anim.SetLayerWeight(index, Mathf.Lerp(anim.GetLayerWeight(index), lerpTarget, 0.3f));
+    }
+
+    public void OnUpdateRM(object deltaPos)
+    {
+        if (CheckState("attack1hC", "Attack"))
+        {
+            this.deltaPos += (Vector3)deltaPos;
+        }
     }
 }
