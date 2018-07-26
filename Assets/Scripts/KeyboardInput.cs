@@ -20,36 +20,23 @@ public class KeyboardInput : IUserInput
     public string keyJUp = "up";
     public string keyJDown = "down";
 
+    [Header("===== Mouse Settings =====")]
+    public bool mouseEnable = false;
+    public float mouseSensitivityX = 1.0f;
+    public float mouseSensitivityY = 1.0f;
 
-    //[Header("===== Output Signals =====")]
-    //public float Dup;
-    //public float Dright;
-    //public float Dmag;
-    //public Vector3 Dvec;
-    //public float Jup;
-    //public float Jright;
-
-    ////1. pressing signal
-    //public bool run;
-    ////2. trigger once signal
-    //public bool jump;
-    //private bool lastJump;
-    //public bool attack;
-    //private bool lastAttack;
-    ////3. double trigger
-
-    //[Header("===== Others =====")]
-    //public bool inputEnable = true;
-
-    //private float targetDup; 
-    //private float targetDright;
-    //private float velocityDup;
-    //private float velocityDright;
-	
 	void Update () 
     {
-        Jup = (Input.GetKey(keyJUp) ? 1.0f : 0) - (Input.GetKey(keyJDown) ? 1.0f : 0);
-        Jright = (Input.GetKey(keyJRight) ? 1.0f : 0) - (Input.GetKey(keyJLeft) ? 1.0f : 0);
+        if(mouseEnable)
+        {
+            Jup = Input.GetAxis("Mouse Y") * mouseSensitivityY * 3f;
+            Jright = Input.GetAxis("Mouse X") * mouseSensitivityX * 2.5f;
+        }
+        else
+        {
+            Jup = (Input.GetKey(keyJUp) ? 1.0f : 0) - (Input.GetKey(keyJDown) ? 1.0f : 0);
+            Jright = (Input.GetKey(keyJRight) ? 1.0f : 0) - (Input.GetKey(keyJLeft) ? 1.0f : 0);
+        }
 
         targetDup = (Input.GetKey(keyUp) ? 1f : 0) - (Input.GetKey(keyDown) ? 1f : 0);
         targetDright = (Input.GetKey(keyRight) ? 1f : 0) - (Input.GetKey(keyLeft) ? 1f : 0);
@@ -71,6 +58,7 @@ public class KeyboardInput : IUserInput
         Dvec = transform.right * dright2 + transform.forward * dup2;
 
         run = Input.GetKey(keyA);
+        defense = Input.GetKey(keyD);
 
         bool newJump = Input.GetKey(keyB);
         if(newJump != lastJump && newJump)

@@ -13,35 +13,25 @@ public class JoystickInput : IUserInput
     public string btnB = "btn1";
     public string btnC = "btn2";
     public string btnD = "btn3";
+    public string btnLB = "btn4";
+    public string btnLT = "btn6";
 
-    //[Header("===== Output Signals =====")]
-    //public float Dup;
-    //public float Dright;
-    //public float Dmag;
-    //public Vector3 Dvec;
-    //public float Jup;
-    //public float Jright;
-
-    ////1. pressing signal
-    //public bool run;
-    ////2. trigger once signal
-    //public bool jump;
-    //private bool lastJump;
-    //public bool attack;
-    //private bool lastAttack;
-    ////3. double trigger
-
-    //[Header("===== Others =====")]
-    //public bool inputEnable = true;
-
-    //private float targetDup;
-    //private float targetDright;
-    //private float velocityDup;
-    //private float velocityDright;
-
+    public MyButton buttonA = new MyButton();
+    public MyButton buttonB = new MyButton();
+    public MyButton buttonC = new MyButton();
+    public MyButton buttonD = new MyButton();
+    public MyButton buttonLB = new MyButton();
+    public MyButton buttonLT= new MyButton();
 
 	void Update () 
     {
+        buttonA.Tick(Input.GetButton(btnA));
+        buttonB.Tick(Input.GetButton(btnB));
+        buttonC.Tick(Input.GetButton(btnC));
+        buttonD.Tick(Input.GetButton(btnD));
+        buttonLB.Tick(Input.GetButton(btnLB));
+        buttonLT.Tick(Input.GetButton(btnLT));
+
         Jup = Input.GetAxis(axisJup);
         Jright = Input.GetAxis(axisJright);
 
@@ -64,29 +54,10 @@ public class JoystickInput : IUserInput
         Dmag = Mathf.Sqrt((dup2 * dup2) + (dright2 * dright2));
         Dvec = transform.right * dright2 + transform.forward * dup2;
 
-        run = Input.GetButton(btnA);
-
-        bool newJump = Input.GetButton(btnB);
-        if (newJump != lastJump && newJump)
-        {
-            jump = true;
-        }
-        else
-        {
-            jump = false;
-        }
-        lastJump = newJump;
-
-        bool newAttack = Input.GetButton(btnC);
-        if (newAttack != lastAttack && newAttack)
-        {
-            attack = true;
-        }
-        else
-        {
-            attack = false;
-        }
-        lastAttack = newAttack;
+        run = buttonA.isPressing;
+        defense = buttonLB.isPressing;
+        jump = buttonB.onPressed;
+        attack = buttonC.onPressed;
 	}
 
 }
