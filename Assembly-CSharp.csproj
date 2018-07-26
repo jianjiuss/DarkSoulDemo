@@ -57,8 +57,10 @@
      <Compile Include="Assets\Scripts\FSMOnEnter.cs" />
      <Compile Include="Assets\Scripts\FSMOnExit.cs" />
      <Compile Include="Assets\Scripts\FSMOnUpdate.cs" />
+     <Compile Include="Assets\Scripts\IUserInput.cs" />
+     <Compile Include="Assets\Scripts\JoystickInput.cs" />
+     <Compile Include="Assets\Scripts\KeyboardInput.cs" />
      <Compile Include="Assets\Scripts\OnGroundSensor.cs" />
-     <Compile Include="Assets\Scripts\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\RootMotionController.cs" />
      <Compile Include="Assets\Scripts\TriggerController.cs" />
  <Reference Include="UnityEngine.UI">

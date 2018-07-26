@@ -576,6 +576,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77406fb052fb7a64295564f94fd5cc95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Dup: 0
+  Dright: 0
+  Dmag: 0
+  Dvec: {x: 0, y: 0, z: 0}
+  Jup: 0
+  Jright: 0
+  run: 0
+  jump: 0
+  attack: 0
+  inputEnable: 1
   keyUp: w
   keyDown: s
   keyLeft: a
@@ -588,16 +598,6 @@ MonoBehaviour:
   keyJLeft: left
   keyJUp: up
   keyJDown: down
-  Dup: 0
-  Dright: 0
-  Dmag: 0
-  Dvec: {x: 0, y: 0, z: 0}
-  Jup: 0
-  Jright: 0
-  run: 0
-  jump: 0
-  attack: 0
-  inputEnable: 1
 --- !u!136 &946043871
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -618,7 +618,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 946043869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 6.73}
+  m_LocalPosition: {x: 0, y: 0, z: 9.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1341706660}
@@ -709,6 +709,10 @@ Prefab:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 2f9d958fbcd96e44ca35a77a15e3187a, type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f9d958fbcd96e44ca35a77a15e3187a, type: 3}
   m_IsPrefabParent: 0
@@ -752,7 +756,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a10d1ecdd173014aafdf87305d3d5aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pi: {fileID: 946043870}
   horizontolRotateSpeed: 50
   verticalRotateSpeed: 80
   cameraSmoothTime: 0.1
@@ -933,7 +936,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1997649947}
   m_LocalRotation: {x: 0.23870218, y: -0, z: -0, w: 0.9710929}
-  m_LocalPosition: {x: 0.23628807, y: 1.76, z: 1.03}
+  m_LocalPosition: {x: 0.23628807, y: 1.76, z: 3.28}
   m_LocalScale: {x: 5.392118, y: 0.6031344, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
