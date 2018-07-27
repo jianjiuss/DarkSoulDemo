@@ -21,5 +21,6 @@ public class LeftArmAnimFix : MonoBehaviour
             leftLowerArm.transform.localEulerAngles += 0.75f * offset;
             anim.SetBoneLocalRotation(HumanBodyBones.LeftLowerArm, Quaternion.Euler(leftLowerArm.localEulerAngles));
         }
+        print(anim.GetBoneTransform(HumanBodyBones.LeftFoot).position);
     }
 }

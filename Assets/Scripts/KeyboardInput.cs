@@ -25,8 +25,18 @@ public class KeyboardInput : IUserInput
     public float mouseSensitivityX = 1.0f;
     public float mouseSensitivityY = 1.0f;
 
+    private MyButton buttonA = new MyButton();
+    private MyButton buttonB = new MyButton();
+    private MyButton buttonC = new MyButton();
+    private MyButton buttonD = new MyButton();
+
 	void Update () 
     {
+        buttonA.Tick(Input.GetKey(keyA));
+        buttonB.Tick(Input.GetKey(keyB));
+        buttonC.Tick(Input.GetKey(keyC));
+        buttonD.Tick(Input.GetKey(keyD));
+
         if(mouseEnable)
         {
             Jup = Input.GetAxis("Mouse Y") * mouseSensitivityY * 3f;
@@ -56,31 +66,11 @@ public class KeyboardInput : IUserInput
 
         Dmag = Mathf.Sqrt((dup2 * dup2) + (dright2 * dright2));
         Dvec = transform.right * dright2 + transform.forward * dup2;
-
-        run = Input.GetKey(keyA);
-        defense = Input.GetKey(keyD);
-
-        bool newJump = Input.GetKey(keyB);
-        if(newJump != lastJump && newJump)
-        {
-            jump = true;
-        }
-        else
-        {
-            jump = false;
-        }
-        lastJump = newJump;
-
-        bool newAttack = Input.GetKey(keyC);
-        if (newAttack != lastAttack && newAttack)
-        {
-            attack = true;
-        }
-        else
-        {
-            attack = false;
-        }
-        lastAttack= newAttack;
+        run = (buttonA.isPressing && !buttonA.isDelaying) || buttonA.isExtending;
+        jump = buttonA.onPressed && buttonA.isExtending;
+        roll = buttonA.onReleased && buttonA.isDelaying;
+        defense = buttonD.isPressing;
+        attack = buttonC.onPressed;
 	}
 
 }

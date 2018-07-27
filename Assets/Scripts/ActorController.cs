@@ -28,6 +28,9 @@ public class ActorController : MonoBehaviour
     private Vector3 deltaPos;
     private bool isAddRollVeloctiy = true;
 
+    [SerializeField]
+    private float velocityMag;
+
 	void Awake () 
     {
         pi = GetComponent<IUserInput>();
@@ -47,11 +50,14 @@ public class ActorController : MonoBehaviour
 	
 	void Update () 
     {
+        velocityMag = rigid.velocity.magnitude;
+
         anim.SetFloat("forward", pi.Dmag * Mathf.Lerp(anim.GetFloat("forward"), (pi.run ? 2f : 1f), 0.5f));
         anim.SetBool("defense", pi.defense);
-        if (rigid.velocity.magnitude > rollMag)
+        if (pi.roll || rigid.velocity.magnitude > rollMag)
         {
             anim.SetTrigger("roll");
+            canAttack = false;
         }
 
         if(pi.jump)
@@ -74,7 +80,6 @@ public class ActorController : MonoBehaviour
         {
             planarVec = pi.Dmag * model.transform.forward * (pi.run ? runMultiplier : 1f) * movingSpeed;
         }
-
 	}
     
 
@@ -141,10 +146,10 @@ public class ActorController : MonoBehaviour
 
     public void OnRollUpdate()
     {
-        if(isAddRollVeloctiy)
-        {
-            thrustVec = model.transform.forward * anim.GetFloat("rollVelocity");
-        }
+        //if(isAddRollVeloctiy)
+        //{
+        //    thrustVec = model.transform.forward * anim.GetFloat("rollVelocity");
+        //}
     }
 
     public void OnRollExit()

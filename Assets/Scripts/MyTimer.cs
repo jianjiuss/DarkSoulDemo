@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MyTimer : MonoBehaviour 
+public class MyTimer 
 {
     public enum STATE
     {

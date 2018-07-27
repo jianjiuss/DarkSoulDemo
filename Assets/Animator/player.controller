@@ -472,7 +472,7 @@ AnimatorStateTransition:
     m_ConditionEvent: forward
     m_EventTreshold: 1.1
   - m_ConditionMode: 1
-    m_ConditionEvent: jump
+    m_ConditionEvent: roll
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102453769042842842}
@@ -480,9 +480,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.06607163
   m_TransitionOffset: 0
-  m_ExitTime: 0.8228347
+  m_ExitTime: 0.011533165
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -571,7 +571,7 @@ AnimatorStateTransition:
     m_ConditionEvent: isGround
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: jump
+    m_ConditionEvent: roll
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102643704377184904}

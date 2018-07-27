@@ -668,13 +668,14 @@ MonoBehaviour:
   defense: 0
   jump: 0
   attack: 0
+  roll: 0
   inputEnable: 1
   keyUp: w
   keyDown: s
   keyLeft: a
   keyRight: d
-  keyA: left shift
-  keyB: space
+  keyA: space
+  keyB: left shift
   keyC: mouse 0
   keyD: mouse 1
   keyJRight: right
@@ -730,9 +731,10 @@ MonoBehaviour:
   runMultiplier: 3
   jumpVelocity: 3
   rollVelocity: 3
-  rollMag: 7
+  rollMag: 10
   frictionOne: {fileID: 13400000, guid: 82273012c0258b84abc454bee4af54fd, type: 2}
   frictionZero: {fileID: 13400000, guid: d6ba69a77a7726747ad628e0aaca12d4, type: 2}
+  velocityMag: 0
 --- !u!54 &946043874
 Rigidbody:
   m_ObjectHideFlags: 0
