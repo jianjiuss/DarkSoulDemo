@@ -56,6 +56,7 @@ public class ActorController : MonoBehaviour
         anim.SetBool("defense", pi.defense);
         if (pi.roll || rigid.velocity.magnitude > rollMag)
         {
+            print(pi.roll);
             anim.SetTrigger("roll");
             canAttack = false;
         }

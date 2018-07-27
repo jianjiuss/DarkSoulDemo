@@ -13,7 +13,7 @@ public class OnGroundSensor : MonoBehaviour
 
 	void Awake () 
     {
-        radius = capcol.radius;
+        radius = capcol.radius - 0.3f;
 	}
 
 
