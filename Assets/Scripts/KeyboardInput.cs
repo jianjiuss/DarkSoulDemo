@@ -14,6 +14,7 @@ public class KeyboardInput : IUserInput
     public string keyB;
     public string keyC;
     public string keyD;
+    public string keyE;
 
     public string keyJRight = "right";
     public string keyJLeft = "left";
@@ -29,6 +30,7 @@ public class KeyboardInput : IUserInput
     private MyButton buttonB = new MyButton();
     private MyButton buttonC = new MyButton();
     private MyButton buttonD = new MyButton();
+    private MyButton buttonE = new MyButton();
 
 	void Update () 
     {
@@ -36,6 +38,7 @@ public class KeyboardInput : IUserInput
         buttonB.Tick(Input.GetKey(keyB));
         buttonC.Tick(Input.GetKey(keyC));
         buttonD.Tick(Input.GetKey(keyD));
+        buttonE.Tick(Input.GetKey(keyE));
 
         if(mouseEnable)
         {
@@ -66,11 +69,12 @@ public class KeyboardInput : IUserInput
 
         Dmag = Mathf.Sqrt((dup2 * dup2) + (dright2 * dright2));
         Dvec = transform.right * dright2 + transform.forward * dup2;
+        roll = buttonA.onReleased && buttonA.isDelaying;
         run = (buttonA.isPressing && !buttonA.isDelaying) || buttonA.isExtending;
         jump = buttonA.onPressed && buttonA.isExtending;
-        roll = buttonA.onReleased && buttonA.isDelaying;
         defense = buttonD.isPressing;
         attack = buttonC.onPressed;
+        lockon = buttonE.onPressed;
 	}
 
 }
