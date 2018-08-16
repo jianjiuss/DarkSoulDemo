@@ -73,7 +73,9 @@ public class KeyboardInput : IUserInput
         run = (buttonA.isPressing && !buttonA.isDelaying) || buttonA.isExtending;
         jump = buttonA.onPressed && buttonA.isExtending;
         defense = buttonD.isPressing;
-        attack = buttonC.onPressed;
+        //attack = buttonC.onPressed;
+        rb = !buttonB.isPressing && buttonC.onPressed;
+        lb = buttonB.isPressing && buttonC.onPressed;
         lockon = buttonE.onPressed;
 	}
 

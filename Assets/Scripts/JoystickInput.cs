@@ -57,7 +57,7 @@ public class JoystickInput : IUserInput
         run = buttonA.isPressing;
         defense = buttonLB.isPressing;
         jump = buttonB.onPressed;
-        attack = buttonC.onPressed;
+        //attack = buttonC.onPressed;
 	}
 
 }
