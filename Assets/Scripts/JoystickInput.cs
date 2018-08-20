@@ -51,8 +51,7 @@ public class JoystickInput : IUserInput
         float dright2 = tempDAxis.x;
         float dup2 = tempDAxis.y;
 
-        Dmag = Mathf.Sqrt((dup2 * dup2) + (dright2 * dright2));
-        Dvec = transform.right * dright2 + transform.forward * dup2;
+        UpdateDmagDvec(dup2, dright2);
 
         run = buttonA.isPressing;
         defense = buttonLB.isPressing;

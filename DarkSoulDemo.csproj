@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\ActorController.cs" />
     <Compile Include="Assets\Scripts\ButtonTest.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\DummyIUserInput.cs" />
     <Compile Include="Assets\Scripts\FSMClearSignals.cs" />
     <Compile Include="Assets\Scripts\FSMOnEnter.cs" />
     <Compile Include="Assets\Scripts\FSMOnExit.cs" />

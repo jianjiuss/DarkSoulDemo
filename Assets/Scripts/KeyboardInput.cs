@@ -66,9 +66,9 @@ public class KeyboardInput : IUserInput
         Vector2 tempDAxis = SquareToCircle(new Vector2(Dright, Dup));
         float dright2 = tempDAxis.x;
         float dup2 = tempDAxis.y;
+        
+        UpdateDmagDvec(dup2, dright2);
 
-        Dmag = Mathf.Sqrt((dup2 * dup2) + (dright2 * dright2));
-        Dvec = transform.right * dright2 + transform.forward * dup2;
         roll = buttonA.onReleased && buttonA.isDelaying;
         run = (buttonA.isPressing && !buttonA.isDelaying) || buttonA.isExtending;
         jump = buttonA.onPressed && buttonA.isExtending;
