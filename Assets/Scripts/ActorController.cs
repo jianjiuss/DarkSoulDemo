@@ -262,4 +262,15 @@ public class ActorController : MonoBehaviour
             this.deltaPos += (this.deltaPos * 0.2f + (Vector3)deltaPos * 0.8f);
         }
     }
+
+    public void OnHitEnter()
+    {
+        pi.inputEnable = false;
+        planarVec = Vector3.zero;
+    }
+
+    public void IssueTrigger(string triggerName)
+    {
+        anim.SetTrigger(triggerName);
+    }
 }
