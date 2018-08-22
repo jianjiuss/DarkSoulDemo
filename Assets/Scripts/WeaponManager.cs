@@ -4,13 +4,44 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
+    public ActorManager am;
+
+    private Collider weaponColL;
+    private Collider weaponColR;
+    private GameObject whL;
+    private GameObject whR;
+
+    private void Start()
+    {
+        Transform weaponHandleLTrans = transform.DeepFind("weaponHandleL");
+        whL = weaponHandleLTrans == null ? null : weaponHandleLTrans.gameObject;
+        Transform weaponHandleRTrans = transform.DeepFind("weaponHandleR");
+        whR = weaponHandleRTrans == null ? null : weaponHandleRTrans.gameObject;
+
+        weaponColR = whR.GetComponentInChildren<Collider>();
+        weaponColL = whL.GetComponentInChildren<Collider>();
+    }
+    
+
     public void WeaponEnable()
     {
-        print("WeaponEnable");
+        if (am.ac.CheckStateTag("attackR"))
+        {
+            weaponColR.enabled = true;
+            print("WeaponR Enable");
+        }
+        else
+        {
+            weaponColL.enabled = true;
+            print("WeaponL Enable");
+        }
     }
 
     public void WeaponDisable()
     {
-        print("WeaponDisable");
+        weaponColR.enabled = false;
+        weaponColL.enabled = false;
+
+        print("WeaponR And WeaponL Disable");
     }
-}
+} 

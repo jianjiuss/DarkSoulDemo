@@ -166,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 281224537}
   m_Layer: 9
-  m_Name: weaponHandle
+  m_Name: weaponHandleR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -259,9 +259,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 3.5
-  m_Height: 2
+  m_Height: 1.4720445
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.00000012040996, y: 0.26397786, z: 0.00000006148994}
 --- !u!33 &295291210
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -278,12 +278,12 @@ GameObject:
   m_Component:
   - component: {fileID: 302031150}
   m_Layer: 9
-  m_Name: weaponHandle (1)
+  m_Name: weaponHandleL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &302031150
 Transform:
   m_ObjectHideFlags: 0
@@ -418,7 +418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 370104209}
   m_Layer: 9
-  m_Name: weaponHandle
+  m_Name: weaponHandleL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1093,7 +1093,7 @@ MonoBehaviour:
   frictionOne: {fileID: 13400000, guid: 82273012c0258b84abc454bee4af54fd, type: 2}
   frictionZero: {fileID: 13400000, guid: d6ba69a77a7726747ad628e0aaca12d4, type: 2}
   velocityMag: 0
-  isLeftShield: 1
+  isLeftShield: 0
 --- !u!54 &946043874
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1122,6 +1122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ac: {fileID: 0}
   bm: {fileID: 0}
+  wm: {fileID: 0}
 --- !u!1 &961955695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,7 +1136,7 @@ GameObject:
   - component: {fileID: 961955697}
   m_Layer: 9
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1192,12 +1193,12 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 961955695}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 3.5
+  m_Height: 1.5489701
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.0000003237661, y: 0.22551504, z: -0.000000038087407}
 --- !u!33 &961955699
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1282,6 +1283,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1125972096}
   - component: {fileID: 1125972097}
+  - component: {fileID: 1125972099}
+  - component: {fileID: 1125972098}
   m_Layer: 12
   m_Name: sensor
   m_TagString: Untagged
@@ -1315,6 +1318,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capcol: {fileID: 1202284662}
   offset: 0.3
+--- !u!114 &1125972098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1125972095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c21b476d37999742b0705e3cf0f00e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  am: {fileID: 0}
+--- !u!136 &1125972099
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1125972095}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.25
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &1141260025
 Prefab:
   m_ObjectHideFlags: 0
@@ -1590,9 +1618,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 3
-  m_Height: 2
+  m_Height: 1.5367683
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.00000010657082, y: 0.23161589, z: 0.0000000707902}
 --- !u!33 &1145222124
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1612,6 +1640,7 @@ GameObject:
   - component: {fileID: 1202284660}
   - component: {fileID: 1202284661}
   - component: {fileID: 1202284659}
+  - component: {fileID: 1202284664}
   m_Layer: 10
   m_Name: EnemyHandle
   m_TagString: Untagged
@@ -1713,6 +1742,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1202284664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1202284658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 541786fc1418468469e90202684ecd16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ac: {fileID: 0}
+  bm: {fileID: 0}
+  wm: {fileID: 0}
 --- !u!1 &1210361958 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100138, guid: 2f9d958fbcd96e44ca35a77a15e3187a, type: 3}
@@ -1766,6 +1809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b01950c211d324ca0c3f79447af392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  am: {fileID: 0}
 --- !u!1 &1258127283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,6 +1942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b01950c211d324ca0c3f79447af392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  am: {fileID: 0}
 --- !u!1001 &1347510629
 Prefab:
   m_ObjectHideFlags: 0
@@ -2326,8 +2371,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1767238049}
+  - component: {fileID: 1767238050}
   m_Layer: 9
-  m_Name: weaponHandle
+  m_Name: weaponHandleR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2347,6 +2393,17 @@ Transform:
   m_Father: {fileID: 863477453}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0.001, y: 111.533005, z: 90.00001}
+--- !u!114 &1767238050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1767238048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc05da678763dd4eaa19c2c7fc6c660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1814661338
 GameObject:
   m_ObjectHideFlags: 0
@@ -2557,12 +2614,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2013357644}
   m_Layer: 9
-  m_Name: weaponHandle
+  m_Name: weaponHandleL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2013357644
 Transform:
   m_ObjectHideFlags: 0

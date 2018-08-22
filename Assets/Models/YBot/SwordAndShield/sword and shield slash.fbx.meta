@@ -210,14 +210,14 @@ ModelImporter:
           postInfinity: 3
           rotationOrder: 0
       events:
-      - time: 0.4
+      - time: 0.39209488
         functionName: WeaponEnable
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.5469246
+      - time: 0.46392062
         functionName: WeaponDisable
         data: 
         objectReferenceParameter: {instanceID: 0}

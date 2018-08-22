@@ -85,7 +85,7 @@ public class ActorController : MonoBehaviour
             canAttack = false;
         }
 
-        if((pi.rb || pi.lb) && (CheckState("ground") || CheckStateTag("attack")) && canAttack)
+        if((pi.rb || pi.lb) && (CheckState("ground") || CheckStateTag("attackR") || CheckStateTag("attackL")) && canAttack)
         {
             if(pi.rb)
             {
@@ -157,12 +157,12 @@ public class ActorController : MonoBehaviour
         deltaPos = Vector3.zero;
     }
 
-    private bool CheckState(string stateName, string layerName = "Base Layer")
+    public bool CheckState(string stateName, string layerName = "Base Layer")
     {
         return anim.GetCurrentAnimatorStateInfo(anim.GetLayerIndex(layerName)).IsName(stateName);
     }
 
-    private bool CheckStateTag(string stateTag, string layerName = "Base Layer")
+    public bool CheckStateTag(string stateTag, string layerName = "Base Layer")
     {
         return anim.GetCurrentAnimatorStateInfo(anim.GetLayerIndex(layerName)).IsTag(stateTag);
     }
@@ -272,5 +272,11 @@ public class ActorController : MonoBehaviour
     public void IssueTrigger(string triggerName)
     {
         anim.SetTrigger(triggerName);
+    }
+
+    public void OnAttackExit()
+    {
+        model.SendMessage("WeaponDisable");
+        print("On Attack Exit");
     }
 }
