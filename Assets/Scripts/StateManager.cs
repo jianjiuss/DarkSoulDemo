@@ -5,8 +5,8 @@ using UnityEngine;
 public class StateManager : IActorManager
 {
 
-    public float HP = 15.0f;
-    public float HPMax = 15.0f;
+    public float HP = 30.0f;
+    public float HPMax = 30.0f;
 
     [Header("1st order state flags")]
     public bool isGround;
@@ -42,7 +42,7 @@ public class StateManager : IActorManager
         isBlocked = am.ac.CheckState("blocked");
 
         isAllowDefense = isGround || isBlocked;
-        isDefense = isAllowDefense || am.ac.CheckState("defense1h", "defense");
+        isDefense = isAllowDefense && am.ac.CheckState("defense", "Defense");
         isImmortal = isRoll || isJab;
     }
 
@@ -50,11 +50,5 @@ public class StateManager : IActorManager
     {
         HP += value;
         HP = Mathf.Clamp(HP, 0, HPMax);
-        
-    }
-
-	public void Test()
-    {
-        print("sm test");
     }
 }

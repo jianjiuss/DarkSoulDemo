@@ -105,17 +105,20 @@ public class ActorController : MonoBehaviour
             if(pi.defense)
             {
                 anim.SetLayerWeight(anim.GetLayerIndex("Defense"), 1);
+                anim.SetBool("defense", true);
             }
             else
             {
                 anim.SetLayerWeight(anim.GetLayerIndex("Defense"), 0);
+                anim.SetBool("defense", false);
             }
         }
         else
         {
             anim.SetLayerWeight(anim.GetLayerIndex("Defense"), 0);
+            anim.SetBool("defense", false);
         }
-        anim.SetBool("defense", pi.defense && isLeftShield);
+        
 
         if (!camcon.lockState)
         {
@@ -219,10 +222,10 @@ public class ActorController : MonoBehaviour
 
     public void OnRollUpdate()
     {
-        if (isAddRollVeloctiy)
-        {
-            thrustVec = model.transform.forward * anim.GetFloat("rollVelocity");
-        }
+        //if (isAddRollVeloctiy)
+        //{
+        //    thrustVec = model.transform.forward * anim.GetFloat("rollVelocity");
+        //}
     }
 
     public void OnRollExit()

@@ -19,6 +19,8 @@ public class WeaponManager : IActorManager
 
         weaponColR = whR.GetComponentInChildren<Collider>();
         weaponColL = whL.GetComponentInChildren<Collider>();
+        weaponColR.enabled = false;
+        weaponColL.enabled = false;
     }
     
 

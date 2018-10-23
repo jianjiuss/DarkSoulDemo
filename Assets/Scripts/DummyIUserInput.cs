@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class DummyIUserInput : IUserInput
 {
-	IEnumerator Start ()
-    {
-        while (true)
-        {
-            rb = true;
-            yield return new WaitForSeconds(0);
-        }
-	}
+	//IEnumerator Start ()
+ //   {
+ //       while (true)
+ //       {
+ //           rb = true;
+ //           yield return new WaitForSeconds(0);
+ //       }
+	//}
 	
 	void Update ()
     {
