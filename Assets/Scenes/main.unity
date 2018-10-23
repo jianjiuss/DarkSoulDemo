@@ -283,7 +283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &302031150
 Transform:
   m_ObjectHideFlags: 0
@@ -992,6 +992,7 @@ GameObject:
   - component: {fileID: 946043873}
   - component: {fileID: 946043874}
   - component: {fileID: 946043875}
+  - component: {fileID: 946043876}
   m_Layer: 0
   m_Name: PlayerHandle
   m_TagString: Untagged
@@ -1093,7 +1094,7 @@ MonoBehaviour:
   frictionOne: {fileID: 13400000, guid: 82273012c0258b84abc454bee4af54fd, type: 2}
   frictionZero: {fileID: 13400000, guid: d6ba69a77a7726747ad628e0aaca12d4, type: 2}
   velocityMag: 0
-  isLeftShield: 0
+  isLeftShield: 1
 --- !u!54 &946043874
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1123,6 +1124,20 @@ MonoBehaviour:
   ac: {fileID: 0}
   bm: {fileID: 0}
   wm: {fileID: 0}
+  sm: {fileID: 0}
+--- !u!114 &946043876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 946043869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21b300d8a9cc4342afca44a7922efef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  am: {fileID: 0}
+  HP: 25
 --- !u!1 &961955695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1641,6 +1656,7 @@ GameObject:
   - component: {fileID: 1202284661}
   - component: {fileID: 1202284659}
   - component: {fileID: 1202284664}
+  - component: {fileID: 1202284665}
   m_Layer: 10
   m_Name: EnemyHandle
   m_TagString: Untagged
@@ -1756,6 +1772,20 @@ MonoBehaviour:
   ac: {fileID: 0}
   bm: {fileID: 0}
   wm: {fileID: 0}
+  sm: {fileID: 0}
+--- !u!114 &1202284665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1202284658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21b300d8a9cc4342afca44a7922efef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  am: {fileID: 0}
+  HP: 15
 --- !u!1 &1210361958 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100138, guid: 2f9d958fbcd96e44ca35a77a15e3187a, type: 3}
@@ -2619,7 +2649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2013357644
 Transform:
   m_ObjectHideFlags: 0

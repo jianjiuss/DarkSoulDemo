@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponManager : MonoBehaviour
+public class WeaponManager : IActorManager
 {
-    public ActorManager am;
 
     private Collider weaponColL;
     private Collider weaponColR;
@@ -28,12 +27,12 @@ public class WeaponManager : MonoBehaviour
         if (am.ac.CheckStateTag("attackR"))
         {
             weaponColR.enabled = true;
-            print("WeaponR Enable");
+            //print("WeaponR Enable");
         }
         else
         {
             weaponColL.enabled = true;
-            print("WeaponL Enable");
+            //print("WeaponL Enable");
         }
     }
 
@@ -42,6 +41,6 @@ public class WeaponManager : MonoBehaviour
         weaponColR.enabled = false;
         weaponColL.enabled = false;
 
-        print("WeaponR And WeaponL Disable");
+        //print("WeaponR And WeaponL Disable");
     }
 } 

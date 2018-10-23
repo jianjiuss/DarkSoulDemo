@@ -100,7 +100,7 @@ public class ActorController : MonoBehaviour
 
         }
 
-        if(CheckState("ground") && isLeftShield)
+        if((CheckState("blocked") || CheckState("ground")) && isLeftShield)
         {
             if(pi.defense)
             {
@@ -277,6 +277,17 @@ public class ActorController : MonoBehaviour
     public void OnAttackExit()
     {
         model.SendMessage("WeaponDisable");
-        print("On Attack Exit");
+        //print("On Attack Exit");
+    }
+
+    public void OnBlockedEnter()
+    {
+        pi.inputEnable = false;
+    }
+
+    public void OnDieEnter()
+    {
+        pi.inputEnable = false;
+        planarVec = Vector3.zero;
     }
 }

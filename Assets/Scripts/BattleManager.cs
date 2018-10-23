@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CapsuleCollider))]
-public class BattleManager : MonoBehaviour
+public class BattleManager : IActorManager
 {
     private CapsuleCollider defCol;
 
-    public ActorManager am;
     private void Start()
     {
         defCol = GetComponent<CapsuleCollider>();
@@ -21,7 +20,7 @@ public class BattleManager : MonoBehaviour
     {
         if(other.tag.Equals("Weapon"))
         {
-            am.DoDamage();
+            am.TryDoDamage();
         }
     }
 }
