@@ -8,7 +8,9 @@ public abstract class IUserInput : MonoBehaviour
     [Header("===== Output Signals =====")]
     public float Dup;
     public float Dright;
+    //控制摇杆类比力度
     public float Dmag;
+    //控制摇杆指向
     public Vector3 Dvec;
     public float Jup;
     public float Jright;

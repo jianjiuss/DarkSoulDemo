@@ -9,8 +9,13 @@ public class ActorController : MonoBehaviour
     public CameraController camcon;
     public float movingSpeed = 1.4f;
     public float runMultiplier = 2.0f;
+    //跳跃时向上增加的推力
     public float jumpVelocity;
+    //滚动时向上增加的推力
     public float rollVelocity = 3.0f;
+    //滚动时候向前增加的推力
+    public int rollForward = 5;
+    //落地时多大的冲力会触发滚动
     public float rollMag = 1.0f;
 
     [Space(10)]
@@ -20,15 +25,21 @@ public class ActorController : MonoBehaviour
 
     private Animator anim;
     private Rigidbody rigid;
+    //平面移动向量
     private Vector3 planarVec;
+    //推力
     private Vector3 thrustVec;
     private bool canAttack = true;
+    //是否锁定平面移动向量
     private bool lockPlanar = false;
+    //当镜头锁定目标时是否锁定角色指向
     private bool trackDirection = false;
     private CapsuleCollider col;
     //private float lerpTarget;
+    //动画位置修正
     private Vector3 deltaPos;
-    private bool isAddRollVeloctiy = true;
+    //翻滚时推力
+    //private bool isAddRollVeloctiy = true;
 
     [SerializeField]
     private float velocityMag;
@@ -177,7 +188,7 @@ public class ActorController : MonoBehaviour
         thrustVec = new Vector3(0, jumpVelocity, 0);
         pi.inputEnable = false;
         lockPlanar = true;
-        isAddRollVeloctiy = false;
+        //isAddRollVeloctiy = false;
         trackDirection = true;
     }
 
@@ -208,11 +219,12 @@ public class ActorController : MonoBehaviour
     {
         pi.inputEnable = false;
         lockPlanar = true;
-        isAddRollVeloctiy = false;
+        //isAddRollVeloctiy = false;
     }
 
     public void OnRollEnter()
     {
+        planarVec = planarVec.normalized * rollForward;
         //thrustVec = model.transform.forward * rollVelocity;
         thrustVec = new Vector3(0, rollVelocity, 0);
         pi.inputEnable = false;
@@ -230,7 +242,7 @@ public class ActorController : MonoBehaviour
 
     public void OnRollExit()
     {
-        isAddRollVeloctiy = true;
+        //isAddRollVeloctiy = true;
     }
 
     public void OnJabEnter()
