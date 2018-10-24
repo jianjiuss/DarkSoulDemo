@@ -17,32 +17,32 @@ public class WeaponManager : IActorManager
         Transform weaponHandleRTrans = transform.DeepFind("weaponHandleR");
         whR = weaponHandleRTrans == null ? null : weaponHandleRTrans.gameObject;
 
-        //weaponColR = whR.GetComponentInChildren<Collider>();
-        //weaponColL = whL.GetComponentInChildren<Collider>();
-        //weaponColR.enabled = false;
-        //weaponColL.enabled = false;
+        weaponColR = whR.GetComponentInChildren<Collider>();
+        weaponColL = whL.GetComponentInChildren<Collider>();
+        weaponColR.enabled = false;
+        weaponColL.enabled = false;
     }
-    
 
-    //public void WeaponEnable()
-    //{
-    //    if (am.ac.CheckStateTag("attackR"))
-    //    {
-    //        weaponColR.enabled = true;
-    //        //print("WeaponR Enable");
-    //    }
-    //    else
-    //    {
-    //        weaponColL.enabled = true;
-    //        //print("WeaponL Enable");
-    //    }
-    //}
 
-    //public void WeaponDisable()
-    //{
-    //    weaponColR.enabled = false;
-    //    weaponColL.enabled = false;
+    public void WeaponEnable()
+    {
+        if (am.ac.CheckStateTag("attackR"))
+        {
+            weaponColR.enabled = true;
+            //print("WeaponR Enable");
+        }
+        else
+        {
+            weaponColL.enabled = true;
+            //print("WeaponL Enable");
+        }
+    }
 
-    //    //print("WeaponR And WeaponL Disable");
-    //}
+    public void WeaponDisable()
+    {
+        weaponColR.enabled = false;
+        weaponColL.enabled = false;
+
+        //print("WeaponR And WeaponL Disable");
+    }
 } 
