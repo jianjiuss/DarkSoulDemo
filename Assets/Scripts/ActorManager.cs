@@ -42,7 +42,7 @@ public class ActorManager : MonoBehaviour
 		
 	}
 
-    public void TryDoDamage(WeaponController wc)
+    public void TryDoDamage(WeaponController wc, bool attackValid, bool counterValid)
     {
         //if(sm.HP > 0)
         //{
@@ -50,11 +50,13 @@ public class ActorManager : MonoBehaviour
         //}
         if(sm.isCounterBackSuccess)
         {
-            wc.wm.am.Stunned();
+            if(counterValid)
+                wc.wm.am.Stunned();
         }
         else if(sm.isCounterBackFailure)
         {
-            HitOrDie(false);
+            if(attackValid)
+                HitOrDie(false);
         }
         else if(sm.isImmortal)
         {
@@ -67,7 +69,8 @@ public class ActorManager : MonoBehaviour
         }
         else
         {
-            HitOrDie(true);
+            if(attackValid)
+                HitOrDie(true);
         }
     }
 
@@ -123,7 +126,6 @@ public class ActorManager : MonoBehaviour
 
     public void OnCounterBackExit()
     {
-        print("exit");
         SetIsCounterBack(false);
     }
 }
