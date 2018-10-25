@@ -98,7 +98,7 @@ public class ActorController : MonoBehaviour
 
         if((pi.rb || pi.lb) && (CheckState("ground") || CheckStateTag("attackR") || CheckStateTag("attackL")) && canAttack)
         {
-            if(pi.rb)
+            if (pi.rb)
             {
                 anim.SetBool("R0L1", false);
                 anim.SetTrigger("attack");
@@ -108,7 +108,10 @@ public class ActorController : MonoBehaviour
                 anim.SetBool("R0L1", true);
                 anim.SetTrigger("attack");
             }
-
+            else if (pi.lb && isLeftShield)
+            {
+                anim.SetTrigger("counterBack");
+            }
         }
 
         if((CheckState("blocked") || CheckState("ground")) && isLeftShield)

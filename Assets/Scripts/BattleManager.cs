@@ -18,9 +18,11 @@ public class BattleManager : IActorManager
 
     private void OnTriggerEnter(Collider other)
     {
+        WeaponController targetWc = other.GetComponentInChildren<WeaponController>()
+;
         if(other.tag.Equals("Weapon"))
         {
-            am.TryDoDamage();
+            am.TryDoDamage(targetWc);
         }
     }
 }

@@ -20,6 +20,11 @@ public class ActorManager : MonoBehaviour
         sm = Bind<StateManager>(gameObject);
 	}
 
+    public void SetIsCounterBack(bool value)
+    {
+        sm.isCounterBackEnable = value;
+    }
+
     private T Bind<T>(GameObject go) where T : IActorManager
     {
         T tempIns;
@@ -37,14 +42,21 @@ public class ActorManager : MonoBehaviour
 		
 	}
 
-    public void TryDoDamage()
+    public void TryDoDamage(WeaponController wc)
     {
         //if(sm.HP > 0)
         //{
         //    sm.AddHP(-5);
         //}
-
-        if(sm.isImmortal)
+        if(sm.isCounterBackSuccess)
+        {
+            wc.wm.am.Stunned();
+        }
+        else if(sm.isCounterBackFailure)
+        {
+            HitOrDie(false);
+        }
+        else if(sm.isImmortal)
         {
             //Do nothing
         }
@@ -55,23 +67,37 @@ public class ActorManager : MonoBehaviour
         }
         else
         {
-            if(sm.HP <= 0)
+            HitOrDie(true);
+        }
+    }
+
+    public void HitOrDie(bool doHitAni)
+    {
+        if (sm.HP <= 0)
+        {
+            // already dead
+        }
+        else
+        {
+            sm.AddHP(-5);
+            if (sm.HP > 0)
             {
-                // already dead
-            }
-            else
-            {
-                sm.AddHP(-5);
-                if (sm.HP > 0)
+                if(doHitAni)
                 {
                     Hit();
                 }
-                else
-                {
-                    Die();
-                }
+                //do some vfx (blood)
+            }
+            else
+            {
+                Die();
             }
         }
+    }
+
+    public void Stunned()
+    {
+        ac.IssueTrigger("stunned");
     }
 
     public void Blocked()
@@ -93,5 +119,11 @@ public class ActorManager : MonoBehaviour
             ac.camcon.LockUnLock();
         }
         ac.camcon.enabled = false;
+    }
+
+    public void OnCounterBackExit()
+    {
+        print("exit");
+        SetIsCounterBack(false);
     }
 }

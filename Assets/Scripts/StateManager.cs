@@ -19,10 +19,14 @@ public class StateManager : IActorManager
     public bool isDie;
     public bool isBlocked;
     public bool isDefense;
+    public bool isCounterBackEnable = false;
+    public bool isCounterBack;
 
     [Header("2nd order state flag")]
     public bool isAllowDefense;
     public bool isImmortal;
+    public bool isCounterBackSuccess;
+    public bool isCounterBackFailure;
 
     private void Start()
     {
@@ -40,10 +44,13 @@ public class StateManager : IActorManager
         isHit = am.ac.CheckState("hit");
         isDie = am.ac.CheckState("die");
         isBlocked = am.ac.CheckState("blocked");
+        isCounterBack = am.ac.CheckState("counterBack");
 
         isAllowDefense = isGround || isBlocked;
         isDefense = isAllowDefense && am.ac.CheckState("defense", "Defense");
         isImmortal = isRoll || isJab;
+        isCounterBackSuccess = isCounterBackEnable;
+        isCounterBackFailure = isCounterBack && !isCounterBackEnable;
     }
 
     public void AddHP(float value)
