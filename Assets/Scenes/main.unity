@@ -1572,6 +1572,7 @@ GameObject:
   m_Component:
   - component: {fileID: 528034945}
   - component: {fileID: 528034944}
+  - component: {fileID: 528034946}
   m_Layer: 0
   m_Name: Director
   m_TagString: Untagged
@@ -1594,9 +1595,11 @@ PlayableDirector:
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 114388292489522378, guid: b04d56f2363ef78408bfaf310a5ef104, type: 2}
-    value: {fileID: 1341706659}
+    value: {fileID: 0}
   - key: {fileID: 114739143357084024, guid: b04d56f2363ef78408bfaf310a5ef104, type: 2}
-    value: {fileID: 673845932}
+    value: {fileID: 0}
+  - key: {fileID: 114402230142946710, guid: b04d56f2363ef78408bfaf310a5ef104, type: 2}
+    value: {fileID: 673845934}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &528034945
@@ -1612,6 +1615,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &528034946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 528034943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a4640bf8bb55b40b0de2108d3a7197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pd: {fileID: 528034944}
+  attacker: {fileID: 1341706662}
+  victim: {fileID: 673845934}
 --- !u!1 &568417590
 GameObject:
   m_ObjectHideFlags: 0
@@ -4409,6 +4426,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8049f9de9512c54b9b71a073ba1f20a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1341706662 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9500000, guid: 2f9d958fbcd96e44ca35a77a15e3187a,
+    type: 3}
+  m_PrefabInternal: {fileID: 1141260025}
 --- !u!114 &1341706663
 MonoBehaviour:
   m_ObjectHideFlags: 0
