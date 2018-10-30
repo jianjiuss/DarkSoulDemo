@@ -74,6 +74,7 @@ public class KeyboardInput : IUserInput
         jump = buttonA.onPressed && buttonA.isExtending;
         defense = buttonD.isPressing;
         //attack = buttonC.onPressed;
+        action = buttonC.onPressed;
         rb = !buttonB.isPressing && buttonC.onPressed;
         lb = buttonB.isPressing && buttonC.onPressed;
         lockon = buttonE.onPressed;

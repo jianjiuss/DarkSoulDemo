@@ -23,7 +23,8 @@ public class ActorController : MonoBehaviour
     public PhysicMaterial frictionOne;
     public PhysicMaterial frictionZero;
 
-    private Animator anim;
+    [HideInInspector]
+    public Animator anim;
     private Rigidbody rigid;
     //平面移动向量
     private Vector3 planarVec;
@@ -45,6 +46,9 @@ public class ActorController : MonoBehaviour
     private float velocityMag;
 
     public bool isLeftShield;
+
+    public delegate void OnActionDelegate();
+    public event OnActionDelegate OnAction;
 
 	void Awake () 
     {
@@ -96,7 +100,12 @@ public class ActorController : MonoBehaviour
             canAttack = false;
         }
 
-        if((pi.rb || pi.lb) && (CheckState("ground") || CheckStateTag("attackR") || CheckStateTag("attackL")) && canAttack)
+        if (pi.action)
+        {
+            OnAction.Invoke();
+        }
+
+        if ((pi.rb || pi.lb) && (CheckState("ground") || CheckStateTag("attackR") || CheckStateTag("attackL")) && canAttack)
         {
             if (pi.rb)
             {
@@ -112,7 +121,7 @@ public class ActorController : MonoBehaviour
             {
                 anim.SetTrigger("counterBack");
             }
-        }
+        } 
 
         if((CheckState("blocked") || CheckState("ground")) && isLeftShield)
         {
@@ -319,5 +328,10 @@ public class ActorController : MonoBehaviour
     {
         pi.inputEnable = false;
         planarVec = Vector3.zero;
+    }
+
+    public void SetBool(string boolName, bool value)
+    {
+        anim.SetBool(boolName, value);
     }
 }

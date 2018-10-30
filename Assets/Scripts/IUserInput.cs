@@ -21,6 +21,7 @@ public abstract class IUserInput : MonoBehaviour
     //2. trigger once signal
     public bool lockon;
     public bool jump;
+    public bool action;
     //public bool attack;
     public bool roll;
     public bool lb;

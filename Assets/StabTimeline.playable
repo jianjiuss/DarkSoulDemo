@@ -16,13 +16,25 @@ MonoBehaviour:
   m_Tracks:
   - {fileID: 114168994803658196}
   - {fileID: 114981898052825654}
-  - {fileID: 114402230142946710}
+  - {fileID: 114347664540511538}
+  - {fileID: 114430173316600848}
   m_FixedDuration: 0
   m_EditorSettings:
     fps: 60
   m_UpdateMode: 0
   m_ParameterName: 
   m_DurationMode: 0
+--- !u!114 &114051814384371630
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8335bb2114497c44b3acf83952897f7, type: 3}
+  m_Name: AmPlayableClip
+  m_EditorClassIdentifier: 
 --- !u!114 &114168994803658196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -44,7 +56,7 @@ MonoBehaviour:
   m_Children:
   - {fileID: 114388292489522378}
   m_Clips: []
---- !u!114 &114305979461728426
+--- !u!114 &114314794387960544
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -52,15 +64,93 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b059d7fa305635439ab602331b8821c, type: 3}
-  m_Name: MySuperPlayableClip
+  m_Script: {fileID: 11500000, guid: a8335bb2114497c44b3acf83952897f7, type: 3}
+  m_Name: AmPlayableClip
   m_EditorClassIdentifier: 
-  template:
-    myCamera: {fileID: 0}
-    myFloat: 0
-  myCamera:
-    exposedName: 
-    defaultValue: {fileID: 0}
+--- !u!114 &114347664540511538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fc8c6caf8c9f1c47ab144b82924944a, type: 3}
+  m_Name: Attacker Script
+  m_EditorClassIdentifier: 
+  m_Locked: 0
+  m_Muted: 0
+  m_Soloed: 0
+  m_Height: 0
+  m_CustomPlayableFullTypename: 
+  m_AnimClip: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips:
+  - m_Start: 0
+    m_ClipIn: 0
+    m_Asset: {fileID: 114051814384371630}
+    m_UnderlyingAsset: {fileID: 114051814384371630}
+    m_Duration: 6.5
+    m_ParentID: 0
+    m_TimeScale: 1
+    m_BlendCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ParentTrack: {fileID: 114347664540511538}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: AmPlayableClip
 --- !u!114 &114388292489522378
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,7 +244,7 @@ MonoBehaviour:
   m_Position: {x: 0, y: 0, z: 0}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_ApplyOffsets: 0
---- !u!114 &114402230142946710
+--- !u!114 &114430173316600848
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -162,8 +252,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af2fdad7c9d79bb4fb6f0d59911b2e24, type: 3}
-  m_Name: My Super Playable Track
+  m_Script: {fileID: 11500000, guid: 4fc8c6caf8c9f1c47ab144b82924944a, type: 3}
+  m_Name: Victim Script
   m_EditorClassIdentifier: 
   m_Locked: 0
   m_Muted: 0
@@ -174,11 +264,11 @@ MonoBehaviour:
   m_Parent: {fileID: 11400000}
   m_Children: []
   m_Clips:
-  - m_Start: 0.8333333333333334
+  - m_Start: 0
     m_ClipIn: 0
-    m_Asset: {fileID: 114305979461728426}
-    m_UnderlyingAsset: {fileID: 114305979461728426}
-    m_Duration: 2.6333333333333333
+    m_Asset: {fileID: 114314794387960544}
+    m_UnderlyingAsset: {fileID: 114314794387960544}
+    m_Duration: 6.5
     m_ParentID: 0
     m_TimeScale: 1
     m_BlendCurve:
@@ -187,7 +277,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    m_ParentTrack: {fileID: 114402230142946710}
+    m_ParentTrack: {fileID: 114430173316600848}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: 0
@@ -237,71 +327,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: MySuperPlayableClip
-  - m_Start: 4.133333333332333
-    m_ClipIn: 0
-    m_Asset: {fileID: 114751009737182062}
-    m_UnderlyingAsset: {fileID: 114751009737182062}
-    m_Duration: 2.3666666666666667
-    m_ParentID: 0
-    m_TimeScale: 1
-    m_BlendCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_ParentTrack: {fileID: 114402230142946710}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: MySuperPlayableClip
+    m_DisplayName: AmPlayableClip
 --- !u!114 &114498471036944210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -429,23 +455,6 @@ MonoBehaviour:
   m_Position: {x: 0, y: 0, z: 0}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_ApplyOffsets: 0
---- !u!114 &114751009737182062
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b059d7fa305635439ab602331b8821c, type: 3}
-  m_Name: MySuperPlayableClip
-  m_EditorClassIdentifier: 
-  template:
-    myCamera: {fileID: 0}
-    myFloat: 0
-  myCamera:
-    exposedName: 
-    defaultValue: {fileID: 0}
 --- !u!114 &114981898052825654
 MonoBehaviour:
   m_ObjectHideFlags: 1

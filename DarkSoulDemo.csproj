@@ -85,6 +85,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AmPlayable\AmPlayableBehaviour.cs" />
+    <Compile Include="Assets\AmPlayable\AmPlayableClip.cs" />
+    <Compile Include="Assets\AmPlayable\AmPlayableMixerBehaviour.cs" />
+    <Compile Include="Assets\AmPlayable\AmPlayableTrack.cs" />
     <Compile Include="Assets\DefaultPlayables\LightControl\LightControlBehaviour.cs" />
     <Compile Include="Assets\DefaultPlayables\LightControl\LightControlClip.cs" />
     <Compile Include="Assets\DefaultPlayables\LightControl\LightControlMixerBehaviour.cs" />
@@ -113,22 +117,21 @@
     <Compile Include="Assets\DefaultPlayables\Video\VideoSchedulerPlayableBehaviour.cs" />
     <Compile Include="Assets\DefaultPlayables\Video\VideoScriptPlayableAsset.cs" />
     <Compile Include="Assets\DefaultPlayables\Video\VideoScriptPlayableTrack.cs" />
-    <Compile Include="Assets\MySuperPlayable\MySuperPlayableBehaviour.cs" />
-    <Compile Include="Assets\MySuperPlayable\MySuperPlayableClip.cs" />
-    <Compile Include="Assets\MySuperPlayable\MySuperPlayableMixerBehaviour.cs" />
-    <Compile Include="Assets\MySuperPlayable\MySuperPlayableTrack.cs" />
     <Compile Include="Assets\Scripts\ActorController.cs" />
     <Compile Include="Assets\Scripts\ActorManager.cs" />
     <Compile Include="Assets\Scripts\BattleManager.cs" />
     <Compile Include="Assets\Scripts\ButtonTest.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\DirectorManager.cs" />
     <Compile Include="Assets\Scripts\DummyIUserInput.cs" />
+    <Compile Include="Assets\Scripts\EventCasterManager.cs" />
     <Compile Include="Assets\Scripts\FSMClearSignals.cs" />
     <Compile Include="Assets\Scripts\FSMOnEnter.cs" />
     <Compile Include="Assets\Scripts\FSMOnExit.cs" />
     <Compile Include="Assets\Scripts\FSMOnUpdate.cs" />
     <Compile Include="Assets\Scripts\Helper\TransformHelper.cs" />
     <Compile Include="Assets\Scripts\IActorManager.cs" />
+    <Compile Include="Assets\Scripts\InterActionManager.cs" />
     <Compile Include="Assets\Scripts\IUserInput.cs" />
     <Compile Include="Assets\Scripts\JoystickInput.cs" />
     <Compile Include="Assets\Scripts\KeyboardInput.cs" />

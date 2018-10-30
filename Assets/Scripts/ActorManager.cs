@@ -5,9 +5,13 @@ using UnityEngine;
 public class ActorManager : MonoBehaviour
 {
     public ActorController ac;
+
+    [Header("=== Auto Generate if Null ===")]
     public BattleManager bm;
     public WeaponManager wm;
     public StateManager sm;
+    public DirectorManager dm;
+    public InterActionManager im;
 
 	void Awake ()
     {
@@ -18,7 +22,24 @@ public class ActorManager : MonoBehaviour
         bm = Bind<BattleManager>(sensor);
         wm = Bind<WeaponManager>(model);
         sm = Bind<StateManager>(gameObject);
+        dm = Bind<DirectorManager>(gameObject);
+        im = Bind<InterActionManager>(sensor);
+
+        ac.OnAction += DoAction;
 	}
+
+    private void DoAction()
+    {
+        print("action");
+        if(im.overlapEcastms.Count != 0)
+        {
+            print(im.overlapEcastms[0].eventName);
+            if(im.overlapEcastms[0].eventName == "frontStab")
+            {
+                dm.PlayFrontStab(this, im.overlapEcastms[0].am);
+            }
+        }
+    }
 
     public void SetIsCounterBack(bool value)
     {
@@ -127,5 +148,13 @@ public class ActorManager : MonoBehaviour
     public void OnCounterBackExit()
     {
         SetIsCounterBack(false);
+    }
+
+    public void LockActorController(bool value)
+    {
+        if(ac != null)
+        {
+            ac.SetBool("lock", value);
+        }
     }
 }

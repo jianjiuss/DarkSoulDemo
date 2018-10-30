@@ -550,7 +550,8 @@ public class TimelinePlayableWizard : EditorWindow
         s_ExposedReferenceTypes = exposedRefTypeList.ToArray();
 
         UsableType noneType = new UsableType((Type)null);
-        s_TrackBindingTypes = UsableType.AmalgamateUsableTypes(s_ExposedReferenceTypes, noneType);
+        UsableType amType = new UsableType(typeof(ActorManager));
+        s_TrackBindingTypes = UsableType.AmalgamateUsableTypes(s_ExposedReferenceTypes, noneType, amType);
 
         s_BehaviourVariableTypes = UsableType.AmalgamateUsableTypes
             (
@@ -567,6 +568,7 @@ public class TimelinePlayableWizard : EditorWindow
                 new UsableType("Quaternion"),
                 new UsableType("AnimationCurve")
             );
+        
         List<UsableType> scriptVariableTypeList = s_BehaviourVariableTypes.ToList();
         scriptVariableTypeList.Sort();
         s_BehaviourVariableTypes = scriptVariableTypeList.ToArray();
