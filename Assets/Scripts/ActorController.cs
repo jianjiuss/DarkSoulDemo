@@ -334,4 +334,11 @@ public class ActorController : MonoBehaviour
     {
         anim.SetBool(boolName, value);
     }
+
+    public void OnLockEnter()
+    {
+        pi.inputEnable = false;
+        planarVec = Vector3.zero;
+    }
+
 }

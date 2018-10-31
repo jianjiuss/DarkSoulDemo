@@ -30,10 +30,8 @@ public class ActorManager : MonoBehaviour
 
     private void DoAction()
     {
-        print("action");
         if(im.overlapEcastms.Count != 0)
         {
-            print(im.overlapEcastms[0].eventName);
             if(im.overlapEcastms[0].eventName == "frontStab")
             {
                 dm.PlayFrontStab(this, im.overlapEcastms[0].am);
