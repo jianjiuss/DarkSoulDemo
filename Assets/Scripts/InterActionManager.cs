@@ -15,6 +15,7 @@ public class InterActionManager : IActorManager
 
     private void OnTriggerStay(Collider other)
     {
+        Debug.Log("stay");
         EventCasterManager[] ecastms = other.GetComponents<EventCasterManager>();
         foreach(var ecastm in ecastms)
         {

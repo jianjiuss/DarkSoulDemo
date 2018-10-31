@@ -27,28 +27,75 @@ public class DirectorManager : IActorManager
 
     public void PlayFrontStab(ActorManager attack, ActorManager victim)
     {
+        if(pd.playableAsset != null)
+        {
+            return;
+        }
+
         pd.playableAsset = Instantiate(frontStab);
 
-        foreach (var track in pd.playableAsset.outputs)
+        TimelineAsset timeline = (TimelineAsset)pd.playableAsset;
+
+        foreach(var track in timeline.GetOutputTracks())
         {
-            if (track.streamName == "Attacker Script")
+            if (track.name == "Attacker Script")
             {
-                pd.SetGenericBinding(track.sourceObject, attack);
+                pd.SetGenericBinding(track, attack);
+                foreach(var clip in track.GetClips())
+                {
+                    AmPlayableClip amClip = (AmPlayableClip)clip.asset;
+                    AmPlayableBehaviour amBehaviour = amClip.template;
+                    amClip.am.exposedName = System.Guid.NewGuid().ToString();
+                    pd.SetReferenceValue(amClip.am.exposedName, attack);
+                }
             }
-            if (track.streamName == "Victim Script")
+            else if (track.name == "Victim Script")
             {
-                pd.SetGenericBinding(track.sourceObject, victim);
+                pd.SetGenericBinding(track, victim);
+                foreach (var clip in track.GetClips())
+                {
+                    AmPlayableClip amClip = (AmPlayableClip)clip.asset;
+                    AmPlayableBehaviour amBehaviour = amClip.template;
+                    amClip.am.exposedName = System.Guid.NewGuid().ToString();
+                    pd.SetReferenceValue(amClip.am.exposedName, victim);
+                }
             }
-            if (track.streamName == "Attacker Animation")
+            else if (track.name == "Attacker Animation")
             {
-                pd.SetGenericBinding(track.sourceObject, attack.ac.anim);
+                pd.SetGenericBinding(track, attack.ac.anim);
             }
-            if (track.streamName == "Victim Animation")
+            else if (track.name == "Victim Animation")
             {
-                pd.SetGenericBinding(track.sourceObject, victim.ac.anim);
+                pd.SetGenericBinding(track, victim.ac.anim);
             }
         }
+
+        //foreach (var trackBinding in pd.playableAsset.outputs)
+        //{
+        //    if (trackBinding.streamName == "Attacker Script")
+        //    {
+        //        pd.SetGenericBinding(trackBinding.sourceObject, attack);
+        //    }
+        //    if (trackBinding.streamName == "Victim Script")
+        //    {
+        //        pd.SetGenericBinding(trackBinding.sourceObject, victim);
+        //    }
+        //    if (trackBinding.streamName == "Attacker Animation")
+        //    {
+        //        pd.SetGenericBinding(trackBinding.sourceObject, attack.ac.anim);
+        //    }
+        //    if (trackBinding.streamName == "Victim Animation")
+        //    {
+        //        pd.SetGenericBinding(trackBinding.sourceObject, victim.ac.anim);
+        //    }
+        //}
+        pd.Evaluate();
         pd.Play();
+    }
+
+    public void PlayOpenBox(ActorManager actorManager, ActorManager am)
+    {
+        Debug.Log("OpenBox");
     }
 
     void Update ()

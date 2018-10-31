@@ -24,17 +24,6 @@ MonoBehaviour:
   m_UpdateMode: 0
   m_ParameterName: 
   m_DurationMode: 0
---- !u!114 &114051814384371630
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8335bb2114497c44b3acf83952897f7, type: 3}
-  m_Name: AmPlayableClip
-  m_EditorClassIdentifier: 
 --- !u!114 &114168994803658196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -56,17 +45,6 @@ MonoBehaviour:
   m_Children:
   - {fileID: 114388292489522378}
   m_Clips: []
---- !u!114 &114314794387960544
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8335bb2114497c44b3acf83952897f7, type: 3}
-  m_Name: AmPlayableClip
-  m_EditorClassIdentifier: 
 --- !u!114 &114347664540511538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,9 +67,9 @@ MonoBehaviour:
   m_Clips:
   - m_Start: 0
     m_ClipIn: 0
-    m_Asset: {fileID: 114051814384371630}
-    m_UnderlyingAsset: {fileID: 114051814384371630}
-    m_Duration: 6.5
+    m_Asset: {fileID: 114748036733288236}
+    m_UnderlyingAsset: {fileID: 114748036733288236}
+    m_Duration: 5.36666666666667
     m_ParentID: 0
     m_TimeScale: 1
     m_BlendCurve:
@@ -266,8 +244,8 @@ MonoBehaviour:
   m_Clips:
   - m_Start: 0
     m_ClipIn: 0
-    m_Asset: {fileID: 114314794387960544}
-    m_UnderlyingAsset: {fileID: 114314794387960544}
+    m_Asset: {fileID: 114624383983335954}
+    m_UnderlyingAsset: {fileID: 114624383983335954}
     m_Duration: 6.5
     m_ParentID: 0
     m_TimeScale: 1
@@ -362,6 +340,22 @@ MonoBehaviour:
   m_UseTrackMatchFields: 0
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 1
+--- !u!114 &114624383983335954
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8335bb2114497c44b3acf83952897f7, type: 3}
+  m_Name: AmPlayableClip
+  m_EditorClassIdentifier: 
+  template:
+    am: {fileID: 0}
+  am:
+    exposedName: -197194
+    defaultValue: {fileID: 0}
 --- !u!114 &114739143357084024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -455,6 +449,22 @@ MonoBehaviour:
   m_Position: {x: 0, y: 0, z: 0}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_ApplyOffsets: 0
+--- !u!114 &114748036733288236
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8335bb2114497c44b3acf83952897f7, type: 3}
+  m_Name: AmPlayableClip
+  m_EditorClassIdentifier: 
+  template:
+    am: {fileID: 0}
+  am:
+    exposedName: -195824
+    defaultValue: {fileID: 0}
 --- !u!114 &114981898052825654
 MonoBehaviour:
   m_ObjectHideFlags: 1
