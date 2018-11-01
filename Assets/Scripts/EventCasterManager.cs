@@ -6,6 +6,7 @@ public class EventCasterManager : IActorManager
 {
     public string eventName;
     public bool active;
+    public Vector3 offset;
 
     public void Start()
     {
