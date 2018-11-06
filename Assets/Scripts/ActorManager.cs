@@ -46,6 +46,14 @@ public class ActorManager : MonoBehaviour
                         dm.PlayOpenBox(this, im.overlapEcastms[0].am);
                     }
                 }
+                else if(im.overlapEcastms[0].eventName == "lever")
+                {
+                    if (BattleManager.CheckAnglePlayer(ac.model, im.overlapEcastms[0].am.gameObject, 30))
+                    {
+                        //im.overlapEcastms[0].active = false;
+                        dm.PullLever(this, im.overlapEcastms[0].am);
+                    }
+                }
             }
         }
     }

@@ -14,6 +14,7 @@ public class DirectorManager : IActorManager
     [Header("=== Timeline assets ===")]
     public TimelineAsset frontStab;
     public TimelineAsset openBox;
+    public TimelineAsset pullLever;
 
     //[Header("=== Assets Settings ===")]
     //public ActorManager attacker;
@@ -80,6 +81,55 @@ public class DirectorManager : IActorManager
         pd.Play();
     }
 
+    internal void PullLever(ActorManager attack, ActorManager victim)
+    {
+        if (pd.state == PlayState.Playing)
+        {
+            return;
+        }
+
+        pd.playableAsset = Instantiate(pullLever);
+
+        TimelineAsset timeline = (TimelineAsset)pd.playableAsset;
+
+        foreach (var track in timeline.GetOutputTracks())
+        {
+            if (track.name == "Player Script")
+            {
+                pd.SetGenericBinding(track, attack);
+                foreach (var clip in track.GetClips())
+                {
+                    AmPlayableClip amClip = (AmPlayableClip)clip.asset;
+                    AmPlayableBehaviour amBehaviour = amClip.template;
+                    amClip.am.exposedName = System.Guid.NewGuid().ToString();
+                    pd.SetReferenceValue(amClip.am.exposedName, attack);
+                }
+            }
+            else if (track.name == "Lever Script")
+            {
+                pd.SetGenericBinding(track, victim);
+                foreach (var clip in track.GetClips())
+                {
+                    AmPlayableClip amClip = (AmPlayableClip)clip.asset;
+                    AmPlayableBehaviour amBehaviour = amClip.template;
+                    amClip.am.exposedName = System.Guid.NewGuid().ToString();
+                    pd.SetReferenceValue(amClip.am.exposedName, victim);
+                }
+            }
+            else if (track.name == "Player Animation")
+            {
+                pd.SetGenericBinding(track, attack.ac.anim);
+            }
+            else if (track.name == "Lever Animation")
+            {
+                pd.SetGenericBinding(track, victim.ac.anim);
+            }
+        }
+
+        pd.Evaluate();
+        pd.Play();
+    }
+
     public void PlayOpenBox(ActorManager attack, ActorManager victim)
     {
         if (pd.state == PlayState.Playing)
@@ -131,9 +181,9 @@ public class DirectorManager : IActorManager
 
     void Update ()
     {
-		if(Input.GetKeyDown(KeyCode.H) && gameObject.layer == LayerMask.NameToLayer("Enemy"))
-        {
-            pd.Play();
-        }
+		//if(Input.GetKeyDown(KeyCode.H) && gameObject.layer == LayerMask.NameToLayer("Enemy"))
+  //      {
+  //          pd.Play();
+  //      }
 	}
 }
