@@ -24,21 +24,15 @@ public class DirectorManager : IActorManager
     {
         pd = GetComponent<PlayableDirector>();
         //pd.playableAsset = Instantiate(frontStab);
-
 	}
+
+    public bool IsPlaying()
+    {
+        return pd.state == PlayState.Playing;
+    }
 
     public void PlayFrontStab(ActorManager attack, ActorManager victim)
     {
-        //if(pd.playableAsset != null)
-        //{
-        //    return;
-        //}
-
-        if(pd.state == PlayState.Playing)
-        {
-            return;
-        }
-
         pd.playableAsset = Instantiate(frontStab);
 
         TimelineAsset timeline = (TimelineAsset)pd.playableAsset;
@@ -83,11 +77,6 @@ public class DirectorManager : IActorManager
 
     internal void PullLever(ActorManager attack, ActorManager victim)
     {
-        if (pd.state == PlayState.Playing)
-        {
-            return;
-        }
-
         pd.playableAsset = Instantiate(pullLever);
 
         TimelineAsset timeline = (TimelineAsset)pd.playableAsset;
@@ -132,11 +121,6 @@ public class DirectorManager : IActorManager
 
     public void PlayOpenBox(ActorManager attack, ActorManager victim)
     {
-        if (pd.state == PlayState.Playing)
-        {
-            return;
-        }
-
         pd.playableAsset = Instantiate(openBox);
 
         TimelineAsset timeline = (TimelineAsset)pd.playableAsset;
@@ -178,12 +162,5 @@ public class DirectorManager : IActorManager
         pd.Evaluate();
         pd.Play();
     }
-
-    void Update ()
-    {
-		//if(Input.GetKeyDown(KeyCode.H) && gameObject.layer == LayerMask.NameToLayer("Enemy"))
-  //      {
-  //          pd.Play();
-  //      }
-	}
+    
 }

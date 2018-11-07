@@ -17,13 +17,17 @@ public class ActorManager : MonoBehaviour
     {
         ac = GetComponent<ActorController>();
         GameObject model = ac.model;
-        GameObject sensor = transform.Find("sensor").gameObject;
 
-        bm = Bind<BattleManager>(sensor);
-        wm = Bind<WeaponManager>(model);
+        if(!ac.isTrigger)
+        {
+            GameObject sensor = transform.Find("sensor").gameObject;
+            bm = Bind<BattleManager>(sensor);
+            im = Bind<InterActionManager>(sensor);
+            wm = Bind<WeaponManager>(model);
+        }
+
         sm = Bind<StateManager>(gameObject);
         dm = Bind<DirectorManager>(gameObject);
-        im = Bind<InterActionManager>(sensor);
 
         ac.OnAction += DoAction;
 	}
@@ -32,25 +36,39 @@ public class ActorManager : MonoBehaviour
     {
         if(im.overlapEcastms.Count != 0)
         {
-            if(im.overlapEcastms[0].active)
+            if(im.overlapEcastms[0].active && !dm.IsPlaying())
             {
                 if(im.overlapEcastms[0].eventName == "frontStab")
                 {
-                    dm.PlayFrontStab(this, im.overlapEcastms[0].am);
+                    if (BattleManager.CheckAnglePlayer(ac.model, im.overlapEcastms[0].am.gameObject, 90))
+                    {
+                        var targetPos = im.overlapEcastms[0].am.gameObject.transform.position;
+                        transform.position = targetPos + im.overlapEcastms[0].transform.forward * im.overlapEcastms[0].offset;
+                        ac.SetLockForward(targetPos);
+                        dm.PlayFrontStab(this, im.overlapEcastms[0].am);
+                    }
                 }
                 else if (im.overlapEcastms[0].eventName == "openBox")
                 {
-                    if(BattleManager.CheckAnglePlayer(ac.model, im.overlapEcastms[0].am.gameObject,30 ))
+                    if(BattleManager.CheckAnglePlayer(ac.model, im.overlapEcastms[0].am.gameObject,90 ))
                     {
-                        im.overlapEcastms[0].active = false;
+                        //im.overlapEcastms[0].active = false;
+                        var targetPos = im.overlapEcastms[0].am.gameObject.transform.position;
+                        transform.position = targetPos + im.overlapEcastms[0].transform.forward * im.overlapEcastms[0].offset;
+                        ac.SetLockForward(targetPos);
+
                         dm.PlayOpenBox(this, im.overlapEcastms[0].am);
                     }
                 }
                 else if(im.overlapEcastms[0].eventName == "lever")
                 {
-                    if (BattleManager.CheckAnglePlayer(ac.model, im.overlapEcastms[0].am.gameObject, 30))
+                    if (BattleManager.CheckAnglePlayer(ac.model, im.overlapEcastms[0].am.gameObject, 90))
                     {
                         //im.overlapEcastms[0].active = false;
+                        var targetPos = im.overlapEcastms[0].am.gameObject.transform.position;
+                        transform.position = targetPos + im.overlapEcastms[0].transform.forward * im.overlapEcastms[0].offset;
+                        ac.SetLockForward(targetPos);
+
                         dm.PullLever(this, im.overlapEcastms[0].am);
                     }
                 }

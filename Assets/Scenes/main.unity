@@ -229,7 +229,7 @@ MonoBehaviour:
   am: {fileID: 0}
   eventName: openBox
   active: 1
-  offset: {x: 0, y: 0, z: 1}
+  offset: 1
 --- !u!65 &13057842
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -377,7 +377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 1411521884}
   pi: {fileID: 0}
-  camcon: {fileID: 1258127285}
+  camcon: {fileID: 0}
   movingSpeed: 1.4
   runMultiplier: 2
   jumpVelocity: 0
@@ -387,6 +387,7 @@ MonoBehaviour:
   frictionOne: {fileID: 0}
   frictionZero: {fileID: 0}
   anim: {fileID: 0}
+  isTrigger: 1
   velocityMag: 0
   isLeftShield: 0
 --- !u!4 &28959714
@@ -1617,7 +1618,7 @@ MonoBehaviour:
   am: {fileID: 1202284664}
   eventName: frontStab
   active: 1
-  offset: {x: 0, y: 0, z: 0}
+  offset: 1
 --- !u!1 &406315613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1691,7 +1692,7 @@ Prefab:
         type: 2}
       propertyPath: camcon
       value: 
-      objectReference: {fileID: 1258127285}
+      objectReference: {fileID: 0}
     - target: {fileID: 95646869208968532, guid: 6d544bc1413652b4fa1cf7d370f299f7,
         type: 2}
       propertyPath: m_Controller
@@ -1705,6 +1706,16 @@ Prefab:
     - target: {fileID: 114091692890879554, guid: 6d544bc1413652b4fa1cf7d370f299f7,
         type: 2}
       propertyPath: offset.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114091692890879554, guid: 6d544bc1413652b4fa1cf7d370f299f7,
+        type: 2}
+      propertyPath: offset
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114487333526783242, guid: 6d544bc1413652b4fa1cf7d370f299f7,
+        type: 2}
+      propertyPath: isTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3026,7 +3037,7 @@ MonoBehaviour:
   am: {fileID: 0}
   eventName: openBox
   active: 1
-  offset: {x: 0, y: 0, z: 0}
+  offset: 0
 --- !u!1 &825547387
 GameObject:
   m_ObjectHideFlags: 0
@@ -3384,6 +3395,7 @@ MonoBehaviour:
   frictionOne: {fileID: 13400000, guid: 82273012c0258b84abc454bee4af54fd, type: 2}
   frictionZero: {fileID: 13400000, guid: d6ba69a77a7726747ad628e0aaca12d4, type: 2}
   anim: {fileID: 0}
+  isTrigger: 0
   velocityMag: 0
   isLeftShield: 1
 --- !u!54 &946043874
@@ -5813,6 +5825,7 @@ MonoBehaviour:
   frictionOne: {fileID: 13400000, guid: 82273012c0258b84abc454bee4af54fd, type: 2}
   frictionZero: {fileID: 13400000, guid: d6ba69a77a7726747ad628e0aaca12d4, type: 2}
   anim: {fileID: 0}
+  isTrigger: 0
   velocityMag: 0
   isLeftShield: 1
 --- !u!114 &1202284661
@@ -7287,7 +7300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 1463566560}
   pi: {fileID: 0}
-  camcon: {fileID: 1258127285}
+  camcon: {fileID: 0}
   movingSpeed: 1.4
   runMultiplier: 2
   jumpVelocity: 0
@@ -7297,6 +7310,7 @@ MonoBehaviour:
   frictionOne: {fileID: 0}
   frictionZero: {fileID: 0}
   anim: {fileID: 0}
+  isTrigger: 1
   velocityMag: 0
   isLeftShield: 0
 --- !u!65 &1524767837
@@ -8252,7 +8266,7 @@ MonoBehaviour:
   am: {fileID: 0}
   eventName: lever
   active: 1
-  offset: {x: 0, y: 0, z: 0}
+  offset: 1
 --- !u!33 &1834531928
 MeshFilter:
   m_ObjectHideFlags: 0

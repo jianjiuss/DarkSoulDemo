@@ -42,6 +42,8 @@ public class ActorController : MonoBehaviour
     //翻滚时推力
     //private bool isAddRollVeloctiy = true;
 
+    public bool isTrigger;
+
     [SerializeField]
     private float velocityMag;
 
@@ -69,6 +71,11 @@ public class ActorController : MonoBehaviour
 	
 	void Update () 
     {
+        if(isTrigger)
+        {
+            return;
+        }
+
         if (pi.lockon)
         {
             camcon.LockUnLock();
@@ -339,6 +346,16 @@ public class ActorController : MonoBehaviour
     {
         pi.inputEnable = false;
         planarVec = Vector3.zero;
+        if(model.layer == LayerMask.NameToLayer("Player"))
+        {
+            model.transform.LookAt(lockForward);
+        }
     }
 
+    private Vector3 lockForward;
+
+    public void SetLockForward(Vector3 position)
+    {
+        lockForward = position;
+    }
 }
