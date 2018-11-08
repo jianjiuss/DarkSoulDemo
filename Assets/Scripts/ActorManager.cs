@@ -112,7 +112,7 @@ public class ActorManager : MonoBehaviour
         else if(sm.isCounterBackFailure)
         {
             if(attackValid)
-                HitOrDie(false);
+                HitOrDie(wc, false);
         }
         else if(sm.isImmortal)
         {
@@ -126,11 +126,11 @@ public class ActorManager : MonoBehaviour
         else
         {
             if(attackValid)
-                HitOrDie(true);
+                HitOrDie(wc, true);
         }
     }
 
-    public void HitOrDie(bool doHitAni)
+    public void HitOrDie(WeaponController targetWc, bool doHitAni)
     {
         if (sm.HP <= 0)
         {
@@ -138,7 +138,7 @@ public class ActorManager : MonoBehaviour
         }
         else
         {
-            sm.AddHP(-5);
+            sm.AddHP(-1 * targetWc.GetATK());
             if (sm.HP > 0)
             {
                 if(doHitAni)

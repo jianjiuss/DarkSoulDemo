@@ -252,6 +252,7 @@
     <Compile Include="Assets\Plugins\RootMotion\Shared Scripts\Warning.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\JSON\readme.txt" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />

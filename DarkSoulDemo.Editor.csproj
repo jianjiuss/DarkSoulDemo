@@ -142,6 +142,7 @@
     <Compile Include="Assets\DefaultPlayables\TextSwitcher\Editor\TextSwitcherDrawer.cs" />
     <Compile Include="Assets\DefaultPlayables\TimeDilation\Editor\TimeDilationDrawer.cs" />
     <Compile Include="Assets\DefaultPlayables\TransformTween\Editor\TransformTweenDrawer.cs" />
+    <Compile Include="Assets\JSON\Editor\JSONChecker.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Attributes\PostProcessingModelEditorAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Models\AmbientOcclusionModelEditor.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Models\AntialiasingModelEditor.cs" />
@@ -178,6 +179,7 @@
     <Compile Include="Assets\PostProcessing\Editor\Utils\ReflectionUtils.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\JSON\readme.txt" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />

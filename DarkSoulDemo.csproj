@@ -117,6 +117,9 @@
     <Compile Include="Assets\DefaultPlayables\Video\VideoSchedulerPlayableBehaviour.cs" />
     <Compile Include="Assets\DefaultPlayables\Video\VideoScriptPlayableAsset.cs" />
     <Compile Include="Assets\DefaultPlayables\Video\VideoScriptPlayableTrack.cs" />
+    <Compile Include="Assets\JSON\JSONObject.cs" />
+    <Compile Include="Assets\JSON\JSONTemplates.cs" />
+    <Compile Include="Assets\JSON\VectorTemplates.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -167,6 +170,7 @@
     <Compile Include="Assets\Scripts\BattleManager.cs" />
     <Compile Include="Assets\Scripts\ButtonTest.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\DataBase.cs" />
     <Compile Include="Assets\Scripts\DirectorManager.cs" />
     <Compile Include="Assets\Scripts\DummyIUserInput.cs" />
     <Compile Include="Assets\Scripts\EventCasterManager.cs" />
@@ -174,6 +178,7 @@
     <Compile Include="Assets\Scripts\FSMOnEnter.cs" />
     <Compile Include="Assets\Scripts\FSMOnExit.cs" />
     <Compile Include="Assets\Scripts\FSMOnUpdate.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Helper\TransformHelper.cs" />
     <Compile Include="Assets\Scripts\IActorManager.cs" />
     <Compile Include="Assets\Scripts\InterActionManager.cs" />
@@ -190,8 +195,10 @@
     <Compile Include="Assets\Scripts\WeaponController.cs" />
     <Compile Include="Assets\Scripts\WeaponManager.cs" />
     <Compile Include="Assets\TesterDirector.cs" />
+    <Compile Include="Assets\WeaponData.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\JSON\readme.txt" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
