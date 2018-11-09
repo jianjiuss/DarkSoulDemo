@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
     private DataBase weaponDB;
+    private WeaponFactory weaponFactory;
 
     private void Awake()
     {
@@ -17,7 +18,14 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         InitWeaponDB();
-        print(weaponDB.weaponDataBase);
+        InitWeaponFactory();
+
+        //weaponFactory.CreateWeapon("CylinderSword", transform);
+    }
+
+    private void InitWeaponFactory()
+    {
+        weaponFactory = new WeaponFactory(weaponDB); 
     }
 
     private void InitWeaponDB()

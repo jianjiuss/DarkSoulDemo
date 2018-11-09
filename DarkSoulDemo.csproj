@@ -193,6 +193,7 @@
     <Compile Include="Assets\Scripts\StateManager.cs" />
     <Compile Include="Assets\Scripts\TriggerController.cs" />
     <Compile Include="Assets\Scripts\WeaponController.cs" />
+    <Compile Include="Assets\Scripts\WeaponFactory.cs" />
     <Compile Include="Assets\Scripts\WeaponManager.cs" />
     <Compile Include="Assets\TesterDirector.cs" />
     <Compile Include="Assets\WeaponData.cs" />

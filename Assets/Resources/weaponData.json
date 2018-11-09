@@ -1,10 +1,14 @@
 {
-	"Falchion":{
-		"DEF":7,
-		"ATK":15
-	},
-	"Sword":{
-		"ATK":10,
-		"DEF":10
-	}
+    "Falchion": {
+        "DEF": 7,
+        "ATK": 15
+    },
+    "Sword": {
+        "ATK": 10,
+        "DEF": 10
+    },
+    "CylinderSword": {
+        "ATK": 5,
+        "DEF": 5
+    }
 }
