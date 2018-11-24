@@ -10,5 +10,9 @@
     "CylinderSword": {
         "ATK": 5,
         "DEF": 5
+    },
+    "Mace": {
+        "ATK": 12,
+        "DEF":  5
     }
 }

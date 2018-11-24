@@ -13,7 +13,7 @@ public class WeaponManager : IActorManager
     public WeaponController wcL;
     public WeaponController wcR;
 
-    private void Start()
+    private void Awake()
     {
         Transform weaponHandleLTrans = transform.DeepFind("weaponHandleL");
         whL = weaponHandleLTrans == null ? null : weaponHandleLTrans.gameObject;
@@ -22,11 +22,46 @@ public class WeaponManager : IActorManager
 
         weaponColR = whR.GetComponentInChildren<Collider>();
         weaponColL = whL.GetComponentInChildren<Collider>();
-        weaponColR.enabled = false;
-        weaponColL.enabled = false;
 
-        wcL = BindWeaponController(weaponColL.gameObject);
-        wcR = BindWeaponController(weaponColR.gameObject);
+        SetEnable(weaponColR, false);
+        SetEnable(weaponColL, false);
+
+        wcL = BindWeaponController(whL);
+        wcR = BindWeaponController(whR);
+    }
+
+    public void UpdateWeaponCollider(string side, Collider col)
+    {
+        if(side == "L")
+        {
+            weaponColL = col;
+        }
+        else if(side == "R")
+        {
+            weaponColR = col;
+        }
+    }
+
+    public void UnloadWeapon(string side)
+    {
+        if(side == "L")
+        {
+            weaponColL = null;
+            wcL.wdata = null;
+            foreach(Transform trans in whL.transform)
+            {
+                Destroy(trans.gameObject);
+            }
+        }
+        else if(side == "R")
+        {
+            weaponColR = null;
+            wcR.wdata = null;
+            foreach(Transform trans in whR.transform)
+            {
+                Destroy(trans.gameObject);
+            }
+        }
     }
 
     public WeaponController BindWeaponController(GameObject targetObj)
@@ -45,22 +80,30 @@ public class WeaponManager : IActorManager
     {
         if (am.ac.CheckStateTag("attackR"))
         {
-            weaponColR.enabled = true;
+            SetEnable(weaponColR, true);
             //print("WeaponR Enable");
         }
         else
         {
-            weaponColL.enabled = true;
+            SetEnable(weaponColL, true);
             //print("WeaponL Enable");
         }
     }
 
     public void WeaponDisable()
     {
-        weaponColR.enabled = false;
-        weaponColL.enabled = false;
+        SetEnable(weaponColR, false);
+        SetEnable(weaponColL, false);
 
         //print("WeaponR And WeaponL Disable");
+    }
+
+    private void SetEnable(Collider collider, bool enabled)
+    {
+        if(collider != null)
+        {
+            collider.enabled = enabled;
+        }
     }
 
     public void CounterBackEnable()

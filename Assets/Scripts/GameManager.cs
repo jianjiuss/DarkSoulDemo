@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public WeaponManager wmTest;
+
     private static GameManager instance;
     private DataBase weaponDB;
     private WeaponFactory weaponFactory;
@@ -20,7 +22,32 @@ public class GameManager : MonoBehaviour
         InitWeaponDB();
         InitWeaponFactory();
 
-        //weaponFactory.CreateWeapon("CylinderSword", transform);
+        Collider col = weaponFactory.CreateWeapon("Sword", "R", wmTest);
+        wmTest.UpdateWeaponCollider("R", col);
+    }
+
+    private void OnGUI()
+    {
+        if(GUI.Button(new Rect(10, 10, 150, 30), "R: Sword"))
+        {
+            wmTest.UnloadWeapon("R");
+            wmTest.UpdateWeaponCollider("R", weaponFactory.CreateWeapon("Sword", "R", wmTest));
+        }
+        if (GUI.Button(new Rect(10, 50, 150, 30), "R: Falchion"))
+        {
+            wmTest.UnloadWeapon("R");
+            wmTest.UpdateWeaponCollider("R", weaponFactory.CreateWeapon("Falchion", "R", wmTest));
+        }
+        if (GUI.Button(new Rect(10, 90, 150, 30), "R: Mace"))
+        {
+            wmTest.UnloadWeapon("R");
+            wmTest.UpdateWeaponCollider("R", weaponFactory.CreateWeapon("Mace", "R", wmTest));
+        }
+
+        if(GUI.Button(new Rect(10, 130, 150, 30), "R: Clear allweapons"))
+        {
+            wmTest.UnloadWeapon("R");
+        }
     }
 
     private void InitWeaponFactory()

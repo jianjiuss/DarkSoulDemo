@@ -20,7 +20,7 @@ public class BattleManager : IActorManager
     {
         if (other.tag.Equals("Weapon"))
         {
-            WeaponController targetWc = other.GetComponentInChildren<WeaponController>();
+            WeaponController targetWc = other.GetComponentInParent<WeaponController>();
 
             GameObject attacker = targetWc.wm.am.gameObject;
             GameObject receiver = am.ac.model;

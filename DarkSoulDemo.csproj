@@ -191,6 +191,7 @@
     <Compile Include="Assets\Scripts\OnGroundSensor.cs" />
     <Compile Include="Assets\Scripts\RootMotionController.cs" />
     <Compile Include="Assets\Scripts\StateManager.cs" />
+    <Compile Include="Assets\Scripts\TouchInput.cs" />
     <Compile Include="Assets\Scripts\TriggerController.cs" />
     <Compile Include="Assets\Scripts\WeaponController.cs" />
     <Compile Include="Assets\Scripts\WeaponFactory.cs" />
