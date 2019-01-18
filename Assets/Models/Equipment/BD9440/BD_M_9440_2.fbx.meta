@@ -1,0 +1,222 @@
+fileFormatVersion: 2
+guid: 5c030b5403bbe3646b77c0250c88a2c5
+timeCreated: 1547717914
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: ArmatureMan.001
+    100002: //RootNode
+    100004: calf.L
+    100006: calf.R
+    100008: foot.L
+    100010: foot.R
+    100012: footIK.L
+    100014: footIK.R
+    100016: footPoleTarget.L
+    100018: footPoleTarget.R
+    100020: hand.L
+    100022: hand.R
+    100024: handIK.L
+    100026: handIK.R
+    100028: handPoleTarget.L
+    100030: handPoleTarget.R
+    100032: head
+    100034: index1.L
+    100036: index1.R
+    100038: index2.L
+    100040: index2.R
+    100042: index3.L
+    100044: index3.R
+    100046: lowerArm.L
+    100048: lowerArm.R
+    100050: lowerArmMark.L
+    100052: lowerArmMark.R
+    100054: mesh0
+    100056: middle1.L
+    100058: middle1.R
+    100060: middle2.L
+    100062: middle2.R
+    100064: middle3.L
+    100066: middle3.R
+    100068: neck
+    100070: pelvis
+    100072: pink1.L
+    100074: pink1.R
+    100076: pink2.L
+    100078: pink2.R
+    100080: pink3.L
+    100082: pink3.R
+    100084: ring1.L
+    100086: ring1.R
+    100088: ring2.L
+    100090: ring2.R
+    100092: ring3.L
+    100094: ring3.R
+    100096: shoulder.L
+    100098: shoulder.R
+    100100: spine1
+    100102: spine2
+    100104: spine3
+    100106: thigh.L
+    100108: thigh.R
+    100110: thumb1.L
+    100112: thumb1.R
+    100114: thumb2.L
+    100116: thumb2.R
+    100118: thumb3.L
+    100120: thumb3.R
+    100122: toes.L
+    100124: toes.R
+    100126: upperArm.L
+    100128: upperArm.R
+    100130: upperArmMark.L
+    100132: upperArmMark.R
+    400000: ArmatureMan.001
+    400002: //RootNode
+    400004: calf.L
+    400006: calf.R
+    400008: foot.L
+    400010: foot.R
+    400012: footIK.L
+    400014: footIK.R
+    400016: footPoleTarget.L
+    400018: footPoleTarget.R
+    400020: hand.L
+    400022: hand.R
+    400024: handIK.L
+    400026: handIK.R
+    400028: handPoleTarget.L
+    400030: handPoleTarget.R
+    400032: head
+    400034: index1.L
+    400036: index1.R
+    400038: index2.L
+    400040: index2.R
+    400042: index3.L
+    400044: index3.R
+    400046: lowerArm.L
+    400048: lowerArm.R
+    400050: lowerArmMark.L
+    400052: lowerArmMark.R
+    400054: mesh0
+    400056: middle1.L
+    400058: middle1.R
+    400060: middle2.L
+    400062: middle2.R
+    400064: middle3.L
+    400066: middle3.R
+    400068: neck
+    400070: pelvis
+    400072: pink1.L
+    400074: pink1.R
+    400076: pink2.L
+    400078: pink2.R
+    400080: pink3.L
+    400082: pink3.R
+    400084: ring1.L
+    400086: ring1.R
+    400088: ring2.L
+    400090: ring2.R
+    400092: ring3.L
+    400094: ring3.R
+    400096: shoulder.L
+    400098: shoulder.R
+    400100: spine1
+    400102: spine2
+    400104: spine3
+    400106: thigh.L
+    400108: thigh.R
+    400110: thumb1.L
+    400112: thumb1.R
+    400114: thumb2.L
+    400116: thumb2.R
+    400118: thumb3.L
+    400120: thumb3.R
+    400122: toes.L
+    400124: toes.R
+    400126: upperArm.L
+    400128: upperArm.R
+    400130: upperArmMark.L
+    400132: upperArmMark.R
+    4300000: mesh0
+    7400000: ArmatureMan.001|ArmatureMan.001|ArmatureMan|idle|ArmatureMan|idle
+    7400002: ArmatureMan.001|ArmatureMan.001|ArmatureMan|idle|ArmatureMan|idle.001
+    7400004: ArmatureMan.001|ArmatureMan|ArmatureMan|idle|ArmatureMan|idle
+    9500000: //RootNode
+    13700000: mesh0
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
