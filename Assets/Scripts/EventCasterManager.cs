@@ -14,5 +14,27 @@ public class EventCasterManager : IActorManager
         {
             am = GetComponentInParent<ActorManager>();
         }
+
+        if (am != null)
+        {
+            am.ac.OnStunnedEnterEvent += Ac_OnStunnedEnterEvent;
+            am.ac.OnGroundEnterEvent += Ac_OnGroundEnterEvent;
+        }
+    }
+
+    private void Ac_OnGroundEnterEvent()
+    {
+        if(eventName.Equals("frontStab"))
+        {
+            active = false;
+        }
+    }
+
+    private void Ac_OnStunnedEnterEvent()
+    {
+        if(eventName.Equals("frontStab"))
+        {
+            active = true;
+        }
     }
 }

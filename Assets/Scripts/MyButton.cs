@@ -36,12 +36,12 @@ public class MyButton
             if(curState)
             {
                 onPressed = true;
-                StartTimer(delayTimer, 0.15f);
+                StartTimer(delayTimer, 0.2f);
             }
             else
             {
                 onReleased = true;
-                StartTimer(extTimer, 0.15f);
+                StartTimer(extTimer, 0.2f);
             }
         }
 

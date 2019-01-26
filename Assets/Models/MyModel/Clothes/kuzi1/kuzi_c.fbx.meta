@@ -1,0 +1,346 @@
+fileFormatVersion: 2
+guid: 30052e692a172514aa81be00ee7cc067
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Dummy001
+    100004: Dummy002
+    100006: Dummy003
+    100008: Dummy004
+    100010: Dummy005
+    100012: Dummy005_end
+    100014: Dummy006
+    100016: Dummy006_end
+    100018: Dummy007
+    100020: Dummy008
+    100022: Dummy009
+    100024: Dummy010
+    100026: Dummy010_end
+    100028: Dummy011
+    100030: Dummy011_end
+    100032: Dummy012
+    100034: Dummy013
+    100036: Dummy013_end
+    100038: //RootNode
+    100040: mesh0
+    100042: mesh2
+    100044: mesh3
+    400000: Armature
+    400002: Dummy001
+    400004: Dummy002
+    400006: Dummy003
+    400008: Dummy004
+    400010: Dummy005
+    400012: Dummy005_end
+    400014: Dummy006
+    400016: Dummy006_end
+    400018: Dummy007
+    400020: Dummy008
+    400022: Dummy009
+    400024: Dummy010
+    400026: Dummy010_end
+    400028: Dummy011
+    400030: Dummy011_end
+    400032: Dummy012
+    400034: Dummy013
+    400036: Dummy013_end
+    400038: //RootNode
+    400040: mesh0
+    400042: mesh2
+    400044: mesh3
+    4300000: mesh0
+    4300002: mesh2
+    4300004: mesh3
+    9500000: //RootNode
+    13700000: mesh0
+    13700002: mesh2
+    13700004: mesh3
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 03 - Default.004
+    second: {fileID: 2100000, guid: f8a55cd9c8ce2c14fa61d19746e7aa64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #41.004'
+    second: {fileID: 2100000, guid: f8a55cd9c8ce2c14fa61d19746e7aa64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #43.004'
+    second: {fileID: 2100000, guid: f8a55cd9c8ce2c14fa61d19746e7aa64, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'RightUpperLeg' not found\n"
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: Dummy001
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dummy007
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dummy008
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dummy009
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dummy002
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dummy003
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dummy004
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dummy005
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dummy005_end
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: kuzi_c(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Armature
+      parentName: kuzi_c(Clone)
+      position: {x: -0.000000014901161, y: -0.057453617, z: -0.007894002}
+      rotation: {x: 0.7071069, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 106.68, y: 106.68, z: 106.68}
+    - name: Dummy001
+      parentName: Armature
+      position: {x: -4.9204096e-16, y: -0.00054000004, z: -0.009708506}
+      rotation: {x: -0.7071092, y: 0.0000034249192, z: -0.0000032478938, w: 0.7071044}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: Dummy002
+      parentName: Dummy001
+      position: {x: 0.0010334895, y: 0.000000001622404, z: 0.0000000079514395}
+      rotation: {x: -0.0000038948033, y: 0.009970112, z: 0.9999503, w: -0.00000075195936}
+      scale: {x: 0.99999994, y: 1, z: 1.0001383}
+    - name: Dummy003
+      parentName: Dummy002
+      position: {x: -0.000000001203478, y: 0.004433638, z: -5.0657433e-11}
+      rotation: {x: 0.07541541, y: -0.057362072, z: 0.6025689, w: 0.7924222}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Dummy004
+      parentName: Dummy003
+      position: {x: -7.4794e-11, y: 0.0042329575, z: -2.771685e-12}
+      rotation: {x: 0.3579349, y: -0.67121154, z: 0.14780904, w: -0.63206816}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
+    - name: Dummy005
+      parentName: Dummy004
+      position: {x: -0.0011032185, y: 0.0013472466, z: -0.000000018254504}
+      rotation: {x: -0.008780671, y: 0.0088613015, z: 0.35123602, w: 0.93620384}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
+    - name: Dummy005_end
+      parentName: Dummy005
+      position: {x: -0, y: 0.0017414532, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dummy006
+      parentName: Dummy002
+      position: {x: -0.000000001203478, y: 0.004433638, z: -5.0657433e-11}
+      rotation: {x: 0.71237373, y: 0.00000017608025, z: -0.0000016370647, w: 0.70180035}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Dummy006_end
+      parentName: Dummy006
+      position: {x: -0, y: 0.004433637, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dummy007
+      parentName: Dummy001
+      position: {x: -0.0010334902, y: -8.4030993e-10, z: -0.000000008797507}
+      rotation: {x: -0.0000039007105, y: 0.0099716745, z: 0.9999503, w: -0.0000007518944}
+      scale: {x: 0.99999994, y: 1.0000004, z: 1.0005475}
+    - name: Dummy008
+      parentName: Dummy007
+      position: {x: -2.4809025e-11, y: 0.004433638, z: -6.096499e-11}
+      rotation: {x: 0.07952467, y: 0.00020348783, z: -0.0021368628, w: 0.99683064}
+      scale: {x: 1, y: 1.0000001, z: 1.0000004}
+    - name: Dummy009
+      parentName: Dummy008
+      position: {x: 9.1437254e-11, y: 0.0042329025, z: 4.2775384e-11}
+      rotation: {x: -0.3749744, y: 0.49026275, z: 0.5026899, w: -0.60525984}
+      scale: {x: 0.99999976, y: 0.9999999, z: 1}
+    - name: Dummy010
+      parentName: Dummy009
+      position: {x: -0.0011032184, y: 0.0013467054, z: 0.000000020832523}
+      rotation: {x: 0.00008861837, y: 0.000084351275, z: -0.70719707, w: 0.70701647}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.9999999}
+    - name: Dummy010_end
+      parentName: Dummy010
+      position: {x: -0, y: 0.0017414527, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dummy011
+      parentName: Dummy007
+      position: {x: -2.4809025e-11, y: 0.004433638, z: -6.096499e-11}
+      rotation: {x: 0.7217945, y: 0.00000016645767, z: -0.0000016805024, w: 0.69210744}
+      scale: {x: 1, y: 1.0000001, z: 1.0000002}
+    - name: Dummy011_end
+      parentName: Dummy011
+      position: {x: -0, y: 0.0044336366, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dummy012
+      parentName: Armature
+      position: {x: 2.1862735e-12, y: -0.0005385438, z: -0.010871689}
+      rotation: {x: -0.7071065, y: -0.00000074318933, z: 0.00000071228004, w: 0.7071071}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dummy013
+      parentName: Dummy012
+      position: {x: -0, y: 0.0013773782, z: 0.0000014961435}
+      rotation: {x: -0.0000000035279433, y: -0.000000043711225, z: -7.5957795e-14,
+        w: 1}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: Dummy013_end
+      parentName: Dummy013
+      position: {x: -0, y: 0.001377381, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mesh0
+      parentName: kuzi_c(Clone)
+      position: {x: -0.0020999457, y: -0.052660685, z: -0.0058203763}
+      rotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
+      scale: {x: 100, y: 100, z: 100}
+    - name: mesh2
+      parentName: kuzi_c(Clone)
+      position: {x: -0.0020999457, y: -0.052660685, z: -0.0058203763}
+      rotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
+      scale: {x: 100, y: 100, z: 100}
+    - name: mesh3
+      parentName: kuzi_c(Clone)
+      position: {x: -0.0020999457, y: -0.052660685, z: -0.0058203763}
+      rotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
+      scale: {x: 100, y: 100, z: 100}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 2f9d958fbcd96e44ca35a77a15e3187a,
+    type: 3}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

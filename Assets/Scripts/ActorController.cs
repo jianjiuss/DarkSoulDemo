@@ -52,6 +52,10 @@ public class ActorController : MonoBehaviour
     public delegate void OnActionDelegate();
     public event OnActionDelegate OnAction;
 
+    public event OnActionDelegate OnStunnedEnterEvent;
+    public event OnActionDelegate OnGroundEnterEvent;
+
+
 	void Awake () 
     {
         pi = GetComponent<IUserInput>();
@@ -89,8 +93,8 @@ public class ActorController : MonoBehaviour
         else
         {
             Vector3 localDVec = transform.InverseTransformVector(pi.Dvec);
-            anim.SetFloat("forward", localDVec.z * (pi.run ? 2f : 1f));
-            anim.SetFloat("right", localDVec.x * (pi.run ? 2f : 1f));
+            anim.SetFloat("forward", localDVec.z * (pi.run ? 1f : 1f));
+            anim.SetFloat("right", localDVec.x * (pi.run ? 1f : 1f));
         }
 
         velocityMag = rigid.velocity.magnitude;
@@ -175,7 +179,7 @@ public class ActorController : MonoBehaviour
 
             if(!lockPlanar)
             {
-                planarVec = pi.Dvec * movingSpeed * ((pi.run) ? runMultiplier : 1.0f);
+                planarVec = pi.Dvec * movingSpeed * ((pi.run) ? 1 : 1.0f);
             }
         }
 	}
@@ -228,6 +232,11 @@ public class ActorController : MonoBehaviour
         canAttack = true;
         col.material = frictionOne;
         trackDirection = false;
+
+        if (OnGroundEnterEvent != null)
+        {
+            OnGroundEnterEvent.Invoke();
+        }
     }
     public void ExitGround()
     {
@@ -343,6 +352,11 @@ public class ActorController : MonoBehaviour
     {
         pi.inputEnable = false;
         planarVec = Vector3.zero;
+
+        if(OnStunnedEnterEvent != null)
+        {
+            OnStunnedEnterEvent.Invoke();
+        }
     }
 
     public void OnCounterBackEnter()

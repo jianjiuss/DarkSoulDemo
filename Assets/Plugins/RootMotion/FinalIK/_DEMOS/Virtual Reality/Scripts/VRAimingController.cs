@@ -231,11 +231,12 @@ namespace RootMotion.Demos {
 		
 		// Returns the offset position of the camera
 		private Vector3 TargetsCameraPosition() {
-			float eyeDistance = (InputTracking.GetLocalPosition(VRNode.LeftEye) - InputTracking.GetLocalPosition(VRNode.RightEye)).magnitude * 0.5f;
-			Vector3 offset = Vector3.right * eyeDistance;
-			if (handedness == Handedness.Left) offset = -offset;
-			
-			return cam.position + cam.rotation * offset;
+            //float eyeDistance = (UnityEngine.XR.InputTracking.GetLocalPosition(UnityEngine.XR.XRNode.LeftEye) - UnityEngine.XR.InputTracking.GetLocalPosition(UnityEngine.XR.XRNode.RightEye)).magnitude * 0.5f;
+            //Vector3 offset = Vector3.right * eyeDistance;
+            //if (handedness == Handedness.Left) offset = -offset;
+
+            //return cam.position + cam.rotation * offset;
+            return Vector3.zero;
 		}
 		
 		// Change from left- to right-handedness and back
