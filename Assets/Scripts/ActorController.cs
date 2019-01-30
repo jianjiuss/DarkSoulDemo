@@ -252,7 +252,14 @@ public class ActorController : MonoBehaviour
 
     public void OnRollEnter()
     {
-        planarVec = planarVec.normalized * rollForward;
+        if(lockPlanar)
+        {
+            planarVec = planarVec.normalized * rollForward;
+        }
+        else
+        {
+            planarVec = pi.Dvec.normalized * rollForward;
+        }
         //thrustVec = model.transform.forward * rollVelocity;
         thrustVec = new Vector3(0, rollVelocity, 0);
         pi.inputEnable = false;
