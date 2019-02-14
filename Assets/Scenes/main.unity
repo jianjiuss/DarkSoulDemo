@@ -1263,6 +1263,11 @@ MonoBehaviour:
   am: {fileID: 0}
   wcL: {fileID: 0}
   wcR: {fileID: 0}
+--- !u!95 &265053929 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9500000, guid: f114496c42884274b983252761929ed5,
+    type: 3}
+  m_PrefabInternal: {fileID: 989056916}
 --- !u!1 &266299483
 GameObject:
   m_ObjectHideFlags: 0
@@ -1954,7 +1959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   am: {fileID: 1202284664}
   eventName: frontStab
-  active: 0
+  active: 1
   offset: 1
 --- !u!1 &406315613
 GameObject:
@@ -2454,7 +2459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!320 &528034944
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -2463,16 +2468,16 @@ PlayableDirector:
   m_GameObject: {fileID: 528034943}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 0}
+  m_PlayableAsset: {fileID: 11400000, guid: b04d56f2363ef78408bfaf310a5ef104, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 114388292489522378, guid: b04d56f2363ef78408bfaf310a5ef104, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 265053923}
   - key: {fileID: 114739143357084024, guid: b04d56f2363ef78408bfaf310a5ef104, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 673845932}
   - key: {fileID: 0}
     value: {fileID: 0}
   - key: {fileID: 114347664540511538, guid: b04d56f2363ef78408bfaf310a5ef104, type: 2}
@@ -2513,8 +2518,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a4640bf8bb55b40b0de2108d3a7197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pd: {fileID: 0}
-  attacker: {fileID: 1341706662}
+  pd: {fileID: 528034944}
+  attacker: {fileID: 265053929}
   victim: {fileID: 673845934}
 --- !u!1001 &545949496
 Prefab:
@@ -3832,7 +3837,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 946043869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.2, y: 0, z: -0.43}
+  m_LocalPosition: {x: -8.87, y: 0, z: -0.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1341706660}
@@ -4090,6 +4095,14 @@ Prefab:
     - target: {fileID: 100080, guid: f114496c42884274b983252761929ed5, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f114496c42884274b983252761929ed5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f114496c42884274b983252761929ed5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f114496c42884274b983252761929ed5, type: 3}
@@ -7111,11 +7124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8049f9de9512c54b9b71a073ba1f20a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &1341706662 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 9500000, guid: 2f9d958fbcd96e44ca35a77a15e3187a,
-    type: 3}
-  m_PrefabInternal: {fileID: 1141260025}
 --- !u!114 &1341706663
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -292,31 +292,14 @@ public class ActorController : MonoBehaviour
         thrustVec = model.transform.forward * anim.GetFloat("jabVelocity");
     }
 
-    public void OnAttack1hAEnter()
+    public void OnAttackEnter()
     {
-        //lerpTarget = 1.0f;
         pi.inputEnable = false;
     }
 
-    public void OnAttack1hAUpdate()
+    public void OnAttackUpdate()
     {
-        int index = anim.GetLayerIndex("Attack");
-        //anim.SetLayerWeight(index, Mathf.Lerp(anim.GetLayerWeight(index), lerpTarget, 0.3f));
-        thrustVec = model.transform.forward * anim.GetFloat("attack1hAVelocity");
-    }
-
-    public void OnAttack1hBUpdate()
-    {
-        int index = anim.GetLayerIndex("Attack");
-        //anim.SetLayerWeight(index, Mathf.Lerp(anim.GetLayerWeight(index), lerpTarget, 0.3f));
-        thrustVec = model.transform.forward * anim.GetFloat("attack1hBVelocity");
-    }
-
-    public void OnAttack1hCUpdate()
-    {
-        int index = anim.GetLayerIndex("Attack");
-        //anim.SetLayerWeight(index, Mathf.Lerp(anim.GetLayerWeight(index), lerpTarget, 0.3f));
-        thrustVec = model.transform.forward * anim.GetFloat("attack1hCVelocity");
+        thrustVec = model.transform.forward * anim.GetFloat("attackVelocity");
     }
 
     public void OnUpdateRM(object deltaPos)

@@ -3,7 +3,7 @@
 --- !u!114 &1
 MonoBehaviour:
   m_ObjectHideFlags: 61
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -16,10 +16,6 @@ MonoBehaviour:
   showAudioWaveform: 1
   trackHeight: 30
   trackScale: 1
-  playRangeEnabled: 0
-  timeAreaPlayRange: {x: 3.4028235e+38, y: 3.4028235e+38}
-  windowTime: 0
-  verticalScroll: 0
   m_Keys:
   - {fileID: 114374990081793274, guid: 3a68e5c3c895ed44fa04979da776bedd, type: 2}
   - {fileID: 114725758866043344, guid: 3a68e5c3c895ed44fa04979da776bedd, type: 2}
