@@ -15,6 +15,7 @@ public class KeyboardInput : IUserInput
     public string keyC;
     public string keyD;
     public string keyE;
+    public string keyF;
 
     public string keyJRight = "right";
     public string keyJLeft = "left";
@@ -31,6 +32,7 @@ public class KeyboardInput : IUserInput
     private MyButton buttonC = new MyButton();
     private MyButton buttonD = new MyButton();
     private MyButton buttonE = new MyButton();
+    private MyButton buttonF = new MyButton();
 
 	void Update () 
     {
@@ -39,6 +41,7 @@ public class KeyboardInput : IUserInput
         buttonC.Tick(Input.GetKey(keyC));
         buttonD.Tick(Input.GetKey(keyD));
         buttonE.Tick(Input.GetKey(keyE));
+        buttonF.Tick(Input.GetKey(keyF));
 
         if(mouseEnable)
         {
@@ -78,6 +81,7 @@ public class KeyboardInput : IUserInput
         rb = !buttonB.isPressing && buttonC.onPressed;
         lb = buttonB.isPressing && buttonC.onPressed;
         lockon = buttonE.onPressed;
+        dualWielding = buttonF.onPressed;
 	}
 
 }

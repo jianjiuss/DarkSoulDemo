@@ -55,6 +55,7 @@ public class ActorController : MonoBehaviour
     public event OnActionDelegate OnStunnedEnterEvent;
     public event OnActionDelegate OnGroundEnterEvent;
 
+    public event OnActionDelegate OnChangeDualHand;
 
 	void Awake () 
     {
@@ -83,6 +84,14 @@ public class ActorController : MonoBehaviour
         if (pi.lockon)
         {
             camcon.LockUnLock();
+        }
+
+        if(pi.dualWielding)
+        {
+            if(OnChangeDualHand != null)
+            {
+                OnChangeDualHand();
+            }
         }
 
         if(!camcon.lockState)

@@ -14,6 +14,10 @@ public class ActorManager : MonoBehaviour
     public DirectorManager dm;
     public InterActionManager im;
 
+    [Header("=== Override Animator ===")]
+    public AnimatorOverrideController oneHandAnimator;
+    public AnimatorOverrideController TwoHandAnimator;
+
 	void Awake ()
     {
         ac = GetComponent<ActorController>();
@@ -31,7 +35,20 @@ public class ActorManager : MonoBehaviour
         dm = Bind<DirectorManager>(gameObject);
 
         ac.OnAction += DoAction;
+        ac.OnChangeDualHand += Ac_OnChangeDualHand;
 	}
+
+    private void Ac_OnChangeDualHand()
+    {
+        if(ac.anim.runtimeAnimatorController.name.Equals(oneHandAnimator.name))
+        {
+            ChangedDualHands(true);
+        }
+        else
+        {
+            ChangedDualHands(false);
+        }
+    }
 
     private void DoAction()
     {
@@ -191,6 +208,20 @@ public class ActorManager : MonoBehaviour
         if(ac != null)
         {
             ac.SetBool("lock", value);
+        }
+    }
+
+    public void ChangedDualHands(bool dualOn)
+    {
+        if(dualOn)
+        {
+            wm.UnloadWeapon("L");
+            ac.anim.runtimeAnimatorController = TwoHandAnimator;
+        }
+        else
+        {
+            wm.UpdateWeaponCollider("L", GameManager.Ins.WeaponFactory.CreateWeapon("Shield", "L", wm));
+            ac.anim.runtimeAnimatorController = oneHandAnimator;
         }
     }
 }

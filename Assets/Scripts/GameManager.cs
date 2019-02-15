@@ -7,6 +7,22 @@ public class GameManager : MonoBehaviour
 {
     public WeaponManager wmTest;
 
+    public static GameManager Ins
+    {
+        get
+        {
+            return instance;
+        }
+    }
+
+    public WeaponFactory WeaponFactory
+    {
+        get
+        {
+            return weaponFactory;
+        }
+    }
+
     private static GameManager instance;
     private DataBase weaponDB;
     private WeaponFactory weaponFactory;

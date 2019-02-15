@@ -22,6 +22,7 @@ public abstract class IUserInput : MonoBehaviour
     public bool lockon;
     public bool jump;
     public bool action;
+    public bool dualWielding;
     //public bool attack;
     public bool roll;
     public bool lb;
