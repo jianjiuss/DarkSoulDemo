@@ -108,17 +108,17 @@
     <Compile Include="Assets\VisualFX\FXVille_BloodPack\Editor\CustomMaterialEditor.cs" />
     <Compile Include="Assets\VisualFX\FXVille_BloodPack\Editor\SpecularToggleEditor.cs" />
     <None Include="Assets\Behavior Designer\Editor\GridShader.shader" />
+    <Reference Include="UnityEditor.StandardEvents">
+      <HintPath>C:/我的文件/项目/个人/DarkSoulDemo/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>C:/我的文件/项目/个人/DarkSoulDemo/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>C:/我的文件/项目/个人/DarkSoulDemo/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/我的文件/项目/个人/DarkSoulDemo/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/我的文件/项目/个人/DarkSoulDemo/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/我的文件/项目/个人/DarkSoulDemo/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/2018.1.0f2/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
